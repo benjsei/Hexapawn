@@ -76,21 +76,29 @@ namespace Hexapawn
             {
                 for (int colonne = 0; colonne < nombreColonnes(); colonne++)
                 {
-                    if (damier[ligne, colonne] == joueur.pion)
-                    {
-                        int nouvelleLigne = ligne + IncrementDeplacement(joueur);
-
-                        Position depart = new Position(ligne, colonne);
-                        Position fin = new Position(nouvelleLigne, colonne);
-
-                        Deplacement deplacement = new Deplacement(depart, fin);
-
+                    if (SiDeplacementPossible(joueur, ligne, colonne) is Deplacement deplacement) {
                         deplacements.Add(deplacement);
                     }
                 }
             }
 
             return deplacements.ToArray();
+        }
+
+        private Deplacement SiDeplacementPossible(Joueur joueur, int ligne, int colonne)
+        {
+            if (damier[ligne, colonne] == joueur.pion)
+            {
+                int nouvelleLigne = ligne + IncrementDeplacement(joueur);
+
+                Position depart = new Position(ligne, colonne);
+                Position fin = new Position(nouvelleLigne, colonne);
+
+
+                return new Deplacement(depart, fin);
+            }
+
+            return null;
         }
 
         private void Demarrer()
