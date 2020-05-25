@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Hexapawn;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
@@ -11,6 +12,8 @@ namespace HexapawnBDD
     {
 
         private Plateau plateau;
+        private Joueur joueurHaut;
+        private Joueur joueurBas;
 
         [Given("Je veux commencer une partie de Hexapawn")]
         public void GivenJeVeuxCommencerUnePartieDeHexapawn()
@@ -19,39 +22,58 @@ namespace HexapawnBDD
       
         }
 
-        [Given("Je démarre une nouvelle partie")]
+        [Given(@"Le joueur du haut est (.*), et il joue les pions (.*)")]
+        public void GivenLeJoueurDuHautEstThomasEtIlJoueLesPionsR(string nom, string pion)
+        {
+            joueurHaut = new Joueur(nom, pion);
+        }
+
+ 
+        [Given(@"Le joueur du bas est (.*), et il joue les pions (.*)")]
+        public void GivenLeJoueurDuBasEstPaulEtIlJoueLesPionsV(string nom, string pion)
+        {
+            joueurBas = new Joueur(nom, pion);
+        }
+
+        [Given("ils démarrent une nouvelle partie")]
         public void GivenJeDemarreUneNouvellePartie()
         {
-            plateau = new Plateau();
+            plateau = new Plateau(joueurHaut, joueurBas);
         }
 
-        [When("Je démarre une nouvelle partie")]
+        [When("ils démarrent une nouvelle partie")]
         public void WhenJeDemarreUnePartie()
         {
-            plateau = new Plateau();
+            plateau = new Plateau(joueurHaut, joueurBas);
         }
 
-        [When("Je bouge mon pion de (.*):(.*) à (.*):(.*)")]
+        [When("Thomas bouge son pion de (.*):(.*) à (.*):(.*)")]
         public void WhenJAvanceLePion(int lignedepart, int coldepart, int lignearrivee, int colarrivee)
         {
-
             Position depart = new Position(lignedepart, coldepart);
             Position arrivee = new Position(lignearrivee, colarrivee);
 
-            plateau.BougerPionJoueur(depart, arrivee);
+            plateau.BougerPion(joueurHaut, depart, arrivee);
         }
 
 
-        [Then(@"l'IA peut bouger en")]
+        [Then(@"Paul peut bouger en")]
         public void ThenIAPeutBougerEn(Table table)
         {
-            var deplacementsAttendus = table.CreateSet<Deplacement>();
-            var deplacementDonnees = plateau.ListerDeplacementPossibles();
+           var deplacementStrings = table.CreateSet<DeplacementString>();
 
-            Assert.AreEqual(deplacementsAttendus, deplacementDonnees);
+           var deplacementsAttendus = deplacementStrings
+                .Select(deplacementString => new Deplacement(
+                deplacementString.Depart,
+                deplacementString.Fin));
+
+            var deplacementsPossibles = plateau.DeplacementsPossibles(joueurBas);
+
+           
+            Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
         }
 
-        [Then("je vois ce plateau (.*)")]
+        [Then("ils voient ce plateau (.*)")]
         public void ThenJeVoisCePlateau(string PlateauAttendu)
         {
             var result = plateau.Afficher();

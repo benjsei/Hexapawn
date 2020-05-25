@@ -78,11 +78,13 @@ namespace HexapawnBDD
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 6
-    testRunner.Given("Je veux commencer une partie de Hexapawn", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 7
-    testRunner.When("Je démarre une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
-    testRunner.Then("je vois ce plateau 111___222", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.When("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+    testRunner.Then("ils voient ce plateau RRR___VVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -92,15 +94,19 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PlateauDeDepartLeJoueurAvanceSonPremierPion()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plateau de départ le joueur avance son premier pion", null, ((string[])(null)));
-#line 10
+#line 11
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 11
-    testRunner.Given("Je démarre une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
-    testRunner.When("Je bouge mon pion de 1:1 à 2:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
-    testRunner.Then("je vois ce plateau _111__222", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 14
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+    testRunner.When("Thomas bouge son pion de 1:1 à 2:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 16
+    testRunner.Then("ils voient ce plateau _RRR__VVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -110,15 +116,19 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PlateauDeDepartLeJoueurAvanceSonDeuxiemePion()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plateau de départ le joueur avance son deuxieme pion", null, ((string[])(null)));
-#line 15
+#line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 16
-    testRunner.Given("Je démarre une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 17
-    testRunner.When("Je bouge mon pion de 1:2 à 2:2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 18
-    testRunner.Then("je vois ce plateau 1_1_1_222", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 21
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 22
+    testRunner.When("Thomas bouge son pion de 1:2 à 2:2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+    testRunner.Then("ils voient ce plateau R_R_R_VVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
@@ -128,46 +138,54 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void PlateauDeDepartLeJoueurAvanceUnPionInexistant()
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plateau de départ le joueur avance un pion inexistant", null, ((string[])(null)));
-#line 20
+#line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 21
-    testRunner.Given("Je démarre une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 22
-    testRunner.When("Je bouge mon pion de 2:2 à 2:3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 23
-    testRunner.Then("je vois ce plateau 111___222", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 26
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 27
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 28
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 29
+    testRunner.When("Thomas bouge son pion de 2:2 à 2:3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
+    testRunner.Then("ils voient ce plateau RRR___VVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("IA liste ses coups possibles")]
-        public virtual void IAListeSesCoupsPossibles()
+        [NUnit.Framework.DescriptionAttribute("Lister les coups possibles de départ pour le joueur du Bas")]
+        public virtual void ListerLesCoupsPossiblesDeDepartPourLeJoueurDuBas()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("IA liste ses coups possibles", null, ((string[])(null)));
-#line 25
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lister les coups possibles de départ pour le joueur du Bas", null, ((string[])(null)));
+#line 32
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 26
-    testRunner.Given("Je démarre une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 27
-    testRunner.When("Je bouge mon pion de 1:2 à 2:2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 33
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 34
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 35
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 36
+    testRunner.When("Thomas bouge son pion de 1:2 à 2:2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "depart",
                         "fin"});
             table1.AddRow(new string[] {
-                        "3:1",
-                        "2:1"});
+                        "2:0",
+                        "1:0"});
             table1.AddRow(new string[] {
-                        "3:2",
-                        "2:2"});
+                        "2:1",
+                        "1:1"});
             table1.AddRow(new string[] {
-                        "3:3",
-                        "2:3"});
-#line 28
-    testRunner.Then("l\'IA peut bouger en", ((string)(null)), table1, "Then ");
+                        "2:2",
+                        "1:2"});
+#line 37
+    testRunner.Then("Paul peut bouger en", ((string)(null)), table1, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

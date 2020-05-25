@@ -8,7 +8,10 @@ namespace Hexapawn
         {
             Console.WriteLine("Hello World!");
 
-            Plateau plateau = new Plateau();
+            Joueur joueurHaut = new Joueur("Thomas", "R");
+            Joueur joueurBas = new Joueur("Paul", "V");
+
+            Plateau plateau = new Plateau(joueurHaut, joueurBas);
             plateau.Afficher();
             Console.WriteLine("Plateau : "+plateau.Afficher());
 

@@ -66,6 +66,7 @@
       <DependentUpon>Test.feature</DependentUpon>
     </Compile>
     <Compile Include="TestSteps.cs" />
+    <Compile Include="DeplacementString.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hexapawn\Hexapawn.csproj">

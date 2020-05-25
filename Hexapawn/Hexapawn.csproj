@@ -35,6 +35,9 @@
     <Compile Include="Plateau.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Deplacement.cs" />
+    <Compile Include="Joueur.cs" />
+    <Compile Include="Partie.cs" />
+    <Compile Include="StringExtension.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
