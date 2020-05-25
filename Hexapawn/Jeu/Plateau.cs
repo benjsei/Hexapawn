@@ -77,8 +77,8 @@ namespace Hexapawn
         {
             for (int i = 0; i < taille * taille; i++)
             {
-                int colonne = i / taille;
-                int ligne = i - taille * colonne;
+                int ligne = i / taille;
+                int colonne = i - taille * ligne;
                 damier[ligne, colonne] = plateau[i].ToString();
             }
         }
@@ -107,12 +107,12 @@ namespace Hexapawn
                     return joueurHaut;
                 }
 
-                if (EstBloque(joueurHaut))
+                if (EstBloque(joueurBas))
                 {
                     return joueurBas;
                 }
 
-                if (EstBloque(joueurBas))
+                if (EstBloque(joueurHaut))
                 {
                     return joueurHaut;
                 }

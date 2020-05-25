@@ -297,7 +297,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 75
     testRunner.Given("ils voient ce plateau _RRV___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 76
-    testRunner.When("Paul bouge son pion de 2:0 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.When("Paul bouge son pion de 1:0 à 0:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 77
     testRunner.Then("Paul gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
@@ -321,6 +321,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line 83
     testRunner.When("Thomas bouge son pion de 0:1 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 84
+    testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Thomas gagne par blocage")]
+        public virtual void ThomasGagneParBlocage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par blocage", null, ((string[])(null)));
+#line 86
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 87
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 88
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 89
+    testRunner.Given("ils voient ce plateau RRRV_V_V_", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 90
+    testRunner.When("Thomas bouge son pion de 0:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 91
     testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

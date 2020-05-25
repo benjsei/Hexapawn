@@ -54,8 +54,8 @@ namespace HexapawnBDD
             plateau = new Plateau(joueurHaut, joueurBas);
         }
 
-        [When("(.*) bouge son pion de (.*):(.*) à (.*):(.*)")]
-        public void WhenJAvanceLePion(string nom, int lignedepart, int coldepart, int lignearrivee, int colarrivee)
+        [When("Thomas bouge son pion de (.*):(.*) à (.*):(.*)")]
+        public void WhenThomasAvanceLePion(int lignedepart, int coldepart, int lignearrivee, int colarrivee)
         {
             Position depart = new Position(lignedepart, coldepart);
             Position arrivee = new Position(lignearrivee, colarrivee);
@@ -63,9 +63,17 @@ namespace HexapawnBDD
             plateau.BougerPion(joueurHaut, depart, arrivee);
         }
 
+        [When("Paul bouge son pion de (.*):(.*) à (.*):(.*)")]
+        public void WhenPaulAvanceLePion(int lignedepart, int coldepart, int lignearrivee, int colarrivee)
+        {
+            Position depart = new Position(lignedepart, coldepart);
+            Position arrivee = new Position(lignearrivee, colarrivee);
 
-        [Then(@"(.*) peut bouger en")]
-        public void ThenPaulPeutBougerEn(string nom, Table table)
+            plateau.BougerPion(joueurBas, depart, arrivee);
+        }
+
+        [Then(@"Paul peut bouger en")]
+        public void ThenPaulPeutBougerEn(Table table)
         {
            var deplacementStrings = table.CreateSet<DeplacementString>();
 

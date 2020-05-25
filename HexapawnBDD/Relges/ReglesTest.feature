@@ -73,7 +73,7 @@ Scenario: Paul gagne par conquète
     Given Le joueur du haut est Thomas, et il joue les pions R
     Given Le joueur du bas est Paul, et il joue les pions V
     Given ils voient ce plateau _RRV___VV
-    When Paul bouge son pion de 2:0 à 1:0
+    When Paul bouge son pion de 1:0 à 0:0
     Then Paul gagne la partie
 
 Scenario: Thomas gagne par détruction
@@ -81,4 +81,11 @@ Scenario: Thomas gagne par détruction
     Given Le joueur du bas est Paul, et il joue les pions V
     Given ils voient ce plateau RRRV_____
     When Thomas bouge son pion de 0:1 à 1:0
+    Then Thomas gagne la partie
+
+Scenario: Thomas gagne par blocage
+    Given Le joueur du haut est Thomas, et il joue les pions R
+    Given Le joueur du bas est Paul, et il joue les pions V
+    Given ils voient ce plateau RRRV_V_V_
+    When Thomas bouge son pion de 0:1 à 1:1
     Then Thomas gagne la partie
