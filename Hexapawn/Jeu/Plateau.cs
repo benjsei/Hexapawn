@@ -117,7 +117,7 @@ namespace Hexapawn
         {
             int nouvelleColonne = colonne + (int)sensDePrise;
 
-            if (nouvelleColonne > 0 &&
+            if (nouvelleColonne >= 0 &&
                 nouvelleColonne < taille &&
                 damier[nouvelleLigne, nouvelleColonne] != caseVide &&
                 damier[nouvelleLigne, nouvelleColonne] != joueur.pion)
