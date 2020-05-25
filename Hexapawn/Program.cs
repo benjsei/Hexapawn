@@ -13,7 +13,7 @@ namespace Hexapawn
 
             Plateau plateau = new Plateau(joueurHaut, joueurBas);
             plateau.Afficher();
-            Console.WriteLine("Plateau : "+plateau.Afficher());
+            Console.WriteLine("Plateau : \n" + plateau.Afficher());
 
         }
     }

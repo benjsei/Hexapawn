@@ -58,7 +58,7 @@ namespace HexapawnBDD
 
 
         [Then(@"Paul peut bouger en")]
-        public void ThenIAPeutBougerEn(Table table)
+        public void ThenPaulPeutBougerEn(Table table)
         {
            var deplacementStrings = table.CreateSet<DeplacementString>();
 
@@ -69,7 +69,6 @@ namespace HexapawnBDD
 
             Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
         }
-
 
         [Then("ils voient ce plateau (.*)")]
         public void ThenJeVoisCePlateau(string PlateauAttendu)

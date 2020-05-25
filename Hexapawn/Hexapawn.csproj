@@ -39,6 +39,7 @@
     <Compile Include="Jeu\Position.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Jeu\SensDeJeu.cs" />
+    <Compile Include="Jeu\SensDePrise.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />

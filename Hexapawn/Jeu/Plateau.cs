@@ -6,25 +6,14 @@ namespace Hexapawn
     public class Plateau
     {
         private const int taille = 3;
-        private const string vide = "_";
+        private const string caseVide = "_";
         private const int ligneDepartJoueurHaut = 0;
         private const int ligneDepartJoueurBas = taille - 1;
-        private const int incrementDeDeplacement = 1;
 
         private readonly Joueur joueurHaut;
         private readonly Joueur joueurBas;
 
         private string[,] damier = new string[taille, taille];
-
-        private int nombreLignes()
-        {
-            return damier.GetLength(0);
-        }
-
-        private int nombreColonnes()
-        {
-            return damier.GetLength(1);
-        }
 
         public Plateau(Joueur joueurHaut, Joueur joueurBas)
         {
@@ -50,10 +39,10 @@ namespace Hexapawn
 
         public void BougerPion(Joueur joueur, Position depart, Position arrivee)
         {
-            if (damier[depart.Ligne - 1, depart.Colonne - 1] == joueur.pion) {
+            if (damier[depart.Ligne, depart.Colonne] == joueur.pion) {
 
-                damier[depart.Ligne - 1, depart.Colonne - 1] = vide;
-                damier[arrivee.Ligne - 1, arrivee.Colonne - 1] = joueur.pion;
+                damier[depart.Ligne, depart.Colonne] = caseVide;
+                damier[arrivee.Ligne, arrivee.Colonne] = joueur.pion;
             } 
         }
 
@@ -72,30 +61,69 @@ namespace Hexapawn
         {
             var deplacements = new List<Deplacement>();
 
-            for (int ligne = 0; ligne < nombreLignes(); ligne++)
+            for (int ligne = 0; ligne < taille; ligne++)
             {
-                for (int colonne = 0; colonne < nombreColonnes(); colonne++)
+                for (int colonne = 0; colonne < taille; colonne++)
                 {
-                    if (SiDeplacementPossible(joueur, ligne, colonne) is Deplacement deplacement) {
-                        deplacements.Add(deplacement);
-                    }
+                    var deplacementsPourCetteCase = DeplacementsPourCetteCase(joueur, ligne, colonne);
+                    deplacements.AddRange(deplacementsPourCetteCase);
                 }
             }
 
             return deplacements.ToArray();
         }
 
-        private Deplacement SiDeplacementPossible(Joueur joueur, int ligne, int colonne)
+        private Deplacement[] DeplacementsPourCetteCase(Joueur joueur, int ligne, int colonne)
         {
+            var deplacements = new List<Deplacement>();
+
             if (damier[ligne, colonne] == joueur.pion)
             {
-                int nouvelleLigne = ligne + IncrementDeplacement(joueur);
-
                 Position depart = new Position(ligne, colonne);
-                Position fin = new Position(nouvelleLigne, colonne);
 
+                int nouvelleLigne = ligne + joueur.IncrementDeplacement;
 
-                return new Deplacement(depart, fin);
+                if (DeplacerSiPossible(colonne, nouvelleLigne) is Position fin)
+                {
+                    deplacements.Add(new Deplacement(depart, fin));
+                }
+
+                if (PendreSiPossible(joueur, colonne, nouvelleLigne, SensDePrise.ADroite) is Position finADroite)
+                {
+                    deplacements.Add(new Deplacement(depart, finADroite));
+                }
+
+                if (PendreSiPossible(joueur, colonne, nouvelleLigne, SensDePrise.AGauche) is Position finAGauche)
+                {
+                    deplacements.Add(new Deplacement(depart, finAGauche));
+                }
+
+            }
+
+            return deplacements.ToArray();
+        }
+
+        private Position DeplacerSiPossible(int colonne, int nouvelleLigne)
+        {
+            if (damier[nouvelleLigne, colonne] == caseVide)
+            {
+                return new Position(nouvelleLigne, colonne);
+            }
+
+            return null;
+        }
+
+        private Position PendreSiPossible(Joueur joueur, int colonne, int nouvelleLigne, SensDePrise sensDePrise)
+        {
+            int nouvelleColonne = colonne + (int)sensDePrise;
+
+            if (nouvelleColonne > 0 &&
+                nouvelleColonne < taille &&
+                damier[nouvelleLigne, nouvelleColonne] != caseVide &&
+                damier[nouvelleLigne, nouvelleColonne] != joueur.pion)
+            {
+
+                return new Position(nouvelleLigne, nouvelleColonne);
             }
 
             return null;
@@ -110,7 +138,7 @@ namespace Hexapawn
 
         private void Vider()
         {
-            for (int ligne = 0; ligne < nombreLignes(); ligne++)
+            for (int ligne = 0; ligne < taille; ligne++)
             {
                 ViderColonne(ligne);
             }
@@ -118,30 +146,20 @@ namespace Hexapawn
 
         private void ViderColonne(int ligne)
         {
-            for (int colonne = 0; colonne < nombreColonnes(); colonne++)
+            for (int colonne = 0; colonne < taille; colonne++)
             {
-                damier[ligne, colonne] = vide;
+                damier[ligne, colonne] = caseVide;
             }
         }
 
         private void MettreEnPlace(Joueur joueur)
         {
-            for (int colonne = 0; colonne < nombreColonnes() ; colonne++)
+            for (int colonne = 0; colonne < taille; colonne++)
             {
                 int ligneDeDepart = LigneDeDepart(joueur);
 
                 damier[ligneDeDepart, colonne] = joueur.pion;
             }
-        }
-
-        private int IncrementDeplacement(Joueur joueur)
-        {
-            if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
-            {
-                return -1 * incrementDeDeplacement;
-            }
-
-            return incrementDeDeplacement;
         }
 
         private int LigneDeDepart(Joueur joueur)
@@ -153,7 +171,5 @@ namespace Hexapawn
 
             return ligneDepartJoueurHaut;
         }
-
     }
-
 }
