@@ -8,7 +8,7 @@ using TechTalk.SpecFlow.Assist;
 namespace HexapawnBDD
 {
     [Binding]
-    public class TestSteps
+    public class ReglesTestSteps
     {
 
         private Plateau plateau;
@@ -41,14 +41,21 @@ namespace HexapawnBDD
             plateau = new Plateau(joueurHaut, joueurBas);
         }
 
+        [Given(@"ils voient ce plateau (.*)")]
+        public void GivenIlsVoientCePlateau_RRR___VV(string Plateau)
+        {
+            plateau = new Plateau(joueurHaut, joueurBas);
+            plateau.Restaurer(Plateau);
+        }
+
         [When("ils démarrent une nouvelle partie")]
         public void WhenJeDemarreUnePartie()
         {
             plateau = new Plateau(joueurHaut, joueurBas);
         }
 
-        [When("Thomas bouge son pion de (.*):(.*) à (.*):(.*)")]
-        public void WhenJAvanceLePion(int lignedepart, int coldepart, int lignearrivee, int colarrivee)
+        [When("(.*) bouge son pion de (.*):(.*) à (.*):(.*)")]
+        public void WhenJAvanceLePion(string nom, int lignedepart, int coldepart, int lignearrivee, int colarrivee)
         {
             Position depart = new Position(lignedepart, coldepart);
             Position arrivee = new Position(lignearrivee, colarrivee);
@@ -57,8 +64,8 @@ namespace HexapawnBDD
         }
 
 
-        [Then(@"Paul peut bouger en")]
-        public void ThenPaulPeutBougerEn(Table table)
+        [Then(@"(.*) peut bouger en")]
+        public void ThenPaulPeutBougerEn(string nom, Table table)
         {
            var deplacementStrings = table.CreateSet<DeplacementString>();
 
@@ -90,6 +97,12 @@ namespace HexapawnBDD
             var deplacementsPossibles = plateau.DeplacementsPossibles(joueurHaut);
 
             Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
+        }
+
+        [Then(@"(.*) gagne la partie")]
+        public void ThenThomasGagneLaPartie(string nom)
+        {
+            Assert.AreEqual(plateau.gagnant.nom, nom);
         }
     }
 }

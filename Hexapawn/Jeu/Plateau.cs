@@ -29,7 +29,7 @@ namespace Hexapawn
         public String Afficher()
         {
             var affichage = String.Empty;
-            for (int ligne = 0; ligne < damier.GetLength(0); ligne++)
+            for (int ligne = 0; ligne < taille; ligne++)
             {
                 affichage += AfficherColonne(ligne);
             }
@@ -49,7 +49,7 @@ namespace Hexapawn
         public String AfficherColonne(int ligne)
         {
             var affichageColonne = String.Empty;
-            for (int colonne = 0; colonne < damier.GetLength(1); colonne++)
+            for (int colonne = 0; colonne < taille; colonne++)
             {
                 affichageColonne += damier[ligne, colonne];
             }
@@ -71,6 +71,94 @@ namespace Hexapawn
             }
 
             return deplacements.ToArray();
+        }
+
+        public void Restaurer(String plateau)
+        {
+            for (int i = 0; i < taille * taille; i++)
+            {
+                int colonne = i / taille;
+                int ligne = i - taille * colonne;
+                damier[ligne, colonne] = plateau[i].ToString();
+            }
+        }
+
+        public Joueur gagnant
+        {
+            get
+            {
+                if (EstDetruit(joueurBas))
+                {
+                    return joueurHaut;
+                }
+
+                if (EstDetruit(joueurHaut))
+                {
+                    return joueurBas;
+                }
+
+                if (AConquis(joueurBas))
+                {
+                    return joueurBas;
+                }
+
+                if (AConquis(joueurHaut))
+                {
+                    return joueurHaut;
+                }
+
+                if (EstBloque(joueurHaut))
+                {
+                    return joueurBas;
+                }
+
+                if (EstBloque(joueurBas))
+                {
+                    return joueurHaut;
+                }
+
+                return null;
+            }
+        }
+
+        private bool EstBloque(Joueur joueur)
+        {
+            return DeplacementsPossibles(joueur).Length == 0;
+        }
+
+        private bool AConquis(Joueur joueur)
+        {
+            int ligne = LigneDArrivee(joueur);
+            for (int colonne = 0; colonne < taille; colonne++)
+            {
+                if (damier[ligne, colonne] == joueur.pion)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool EstDetruit(Joueur joueur)
+        {
+            return !Trouver(joueur.pion);
+        }
+
+        private bool Trouver(String pion)
+        {
+            for (int ligne = 0; ligne < taille; ligne++)
+            {
+                for (int colonne = 0; colonne < taille; colonne++)
+                {
+                    if (damier[ligne, colonne] == pion)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         private Deplacement[] DeplacementsPourCetteCase(Joueur joueur, int ligne, int colonne)
@@ -170,6 +258,16 @@ namespace Hexapawn
             }
 
             return ligneDepartJoueurHaut;
+        }
+
+        private int LigneDArrivee(Joueur joueur)
+        {
+            if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
+            {
+                return ligneDepartJoueurHaut;
+            }
+
+            return ligneDepartJoueurBas;
         }
     }
 }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HexapawnBDD
+namespace HexapawnBDD.Relges
 {
     using TechTalk.SpecFlow;
     
@@ -24,7 +24,7 @@ namespace HexapawnBDD
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "Test.feature"
+#line 1 "ReglesTest.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
@@ -226,10 +226,10 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Paul est bloqué par un pion de Thomas")]
-        public virtual void PaulEstBloqueParUnPionDeThomas()
+        [NUnit.Framework.DescriptionAttribute("Paul est bloqué par un pion de Thomas, mais peut le prendre")]
+        public virtual void PaulEstBloqueParUnPionDeThomasMaisPeutLePrendre()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul est bloqué par un pion de Thomas", null, ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul est bloqué par un pion de Thomas, mais peut le prendre", null, ((string[])(null)));
 #line 54
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -256,6 +256,72 @@ this.ScenarioInitialize(scenarioInfo);
                         "1:2"});
 #line 59
     testRunner.Then("Paul peut bouger en", ((string)(null)), table3, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Thomas gagne par conquète")]
+        public virtual void ThomasGagneParConquete()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par conquète", null, ((string[])(null)));
+#line 65
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 66
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 67
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 68
+    testRunner.Given("ils voient ce plateau _RRR___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 69
+    testRunner.When("Thomas bouge son pion de 1:0 à 2:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 70
+    testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Paul gagne par conquète")]
+        public virtual void PaulGagneParConquete()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par conquète", null, ((string[])(null)));
+#line 72
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 73
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 74
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 75
+    testRunner.Given("ils voient ce plateau _RRV___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 76
+    testRunner.When("Paul bouge son pion de 2:0 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 77
+    testRunner.Then("Paul gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Thomas gagne par détruction")]
+        public virtual void ThomasGagneParDetruction()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par détruction", null, ((string[])(null)));
+#line 79
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 80
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 81
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 82
+    testRunner.Given("ils voient ce plateau RRRV_____", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 83
+    testRunner.When("Thomas bouge son pion de 0:1 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 84
+    testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
