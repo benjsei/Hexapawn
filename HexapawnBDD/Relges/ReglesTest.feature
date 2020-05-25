@@ -89,3 +89,10 @@ Scenario: Thomas gagne par blocage
     Given ils voient ce plateau RRRV_V_V_
     When Thomas bouge son pion de 0:1 à 1:1
     Then Thomas gagne la partie
+
+Scenario: Paul gagne par blocage
+    Given Le joueur du haut est Thomas, et il joue les pions R
+    Given Le joueur du bas est Paul, et il joue les pions V
+    Given ils voient ce plateau _R_R_RVVV
+    When Paul bouge son pion de 2:1 à 1:1
+    Then Paul gagne la partie

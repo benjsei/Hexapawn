@@ -347,6 +347,28 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Paul gagne par blocage")]
+        public virtual void PaulGagneParBlocage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par blocage", null, ((string[])(null)));
+#line 93
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 94
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 95
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 96
+    testRunner.Given("ils voient ce plateau _R_R_RVVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 97
+    testRunner.When("Paul bouge son pion de 2:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+    testRunner.Then("Paul gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

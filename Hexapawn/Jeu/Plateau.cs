@@ -13,6 +13,24 @@ namespace Hexapawn
         private readonly Joueur joueurHaut;
         private readonly Joueur joueurBas;
 
+        private Joueur dernierJoueur;
+        private Joueur prochainJoueur
+        {
+            get
+            {
+                if (dernierJoueur == joueurHaut) {
+                    return joueurBas;
+                }
+
+                if (dernierJoueur == joueurBas)
+                {
+                    return joueurHaut;
+                }
+
+                return null;
+            }
+        }
+
         private string[,] damier = new string[taille, taille];
 
         public Plateau(Joueur joueurHaut, Joueur joueurBas)
@@ -43,6 +61,7 @@ namespace Hexapawn
 
                 damier[depart.Ligne, depart.Colonne] = caseVide;
                 damier[arrivee.Ligne, arrivee.Colonne] = joueur.pion;
+                dernierJoueur = joueur;
             } 
         }
 
@@ -87,34 +106,19 @@ namespace Hexapawn
         {
             get
             {
-                if (EstDetruit(joueurBas))
+                if (EstDetruit(prochainJoueur))
                 {
-                    return joueurHaut;
+                    return dernierJoueur;
                 }
 
-                if (EstDetruit(joueurHaut))
+                if (AConquis(dernierJoueur))
                 {
-                    return joueurBas;
+                    return dernierJoueur;
                 }
 
-                if (AConquis(joueurBas))
+                if (EstBloque(prochainJoueur))
                 {
-                    return joueurBas;
-                }
-
-                if (AConquis(joueurHaut))
-                {
-                    return joueurHaut;
-                }
-
-                if (EstBloque(joueurBas))
-                {
-                    return joueurBas;
-                }
-
-                if (EstBloque(joueurHaut))
-                {
-                    return joueurHaut;
+                    return dernierJoueur;
                 }
 
                 return null;
