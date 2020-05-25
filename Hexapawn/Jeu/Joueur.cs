@@ -5,7 +5,7 @@ namespace Hexapawn
     {
         public string nom;
         public string pion;
-        public int LigneDepart;
+        public SensDeJeu sensDeJeu;
 
         public Joueur(string nom, string pion)
         {

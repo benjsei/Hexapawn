@@ -7,11 +7,12 @@ namespace Hexapawn
     {
         private const int taille = 3;
         private const string vide = "_";
-        private const int ligneDepartJoueurHaut = 1;
-        private const int ligneDepartJoueurBas = taille;
+        private const int ligneDepartJoueurHaut = 0;
+        private const int ligneDepartJoueurBas = taille - 1;
+        private const int incrementDeDeplacement = 1;
 
-        private Joueur joueurHaut;
-        private Joueur joueurBas;
+        private readonly Joueur joueurHaut;
+        private readonly Joueur joueurBas;
 
         private string[,] damier = new string[taille, taille];
 
@@ -27,10 +28,10 @@ namespace Hexapawn
 
         public Plateau(Joueur joueurHaut, Joueur joueurBas)
         {
-            joueurHaut.LigneDepart = ligneDepartJoueurHaut;
+            joueurHaut.sensDeJeu = SensDeJeu.HautVersBas;
             this.joueurHaut = joueurHaut;
 
-            joueurBas.LigneDepart = ligneDepartJoueurBas;
+            joueurBas.sensDeJeu = SensDeJeu.BasVersHaut;
             this.joueurBas = joueurBas;
 
             Demarrer();
@@ -71,35 +72,22 @@ namespace Hexapawn
         {
             var deplacements = new List<Deplacement>();
 
-            if (joueur == joueurBas) {
-
-                for (int ligne = 0; ligne < nombreLignes(); ligne++)
+            for (int ligne = 0; ligne < nombreLignes(); ligne++)
+            {
+                for (int colonne = 0; colonne < nombreColonnes(); colonne++)
                 {
-                    for (int colonne = 0; colonne < nombreColonnes(); colonne++)
+                    if (damier[ligne, colonne] == joueur.pion)
                     {
-                        if (damier[ligne, colonne] == joueur.pion)
-                        {
-                            int nouvelleLigne = ligne;
-                            if (joueur == joueurBas)
-                            {
-                                nouvelleLigne--;
-                            }
-                            else
-                            {
-                                nouvelleLigne++;
-                            }
+                        int nouvelleLigne = ligne + IncrementDeplacement(joueur);
 
-                            Position depart = new Position(ligne, colonne);
-                            Position fin = new Position(nouvelleLigne, colonne);
+                        Position depart = new Position(ligne, colonne);
+                        Position fin = new Position(nouvelleLigne, colonne);
 
-                            Deplacement deplacement = new Deplacement(depart, fin);
+                        Deplacement deplacement = new Deplacement(depart, fin);
 
-                            deplacements.Add(deplacement);
-                        }
+                        deplacements.Add(deplacement);
                     }
                 }
-
-
             }
 
             return deplacements.ToArray();
@@ -132,9 +120,32 @@ namespace Hexapawn
         {
             for (int colonne = 0; colonne < nombreColonnes() ; colonne++)
             {
-                damier[joueur.LigneDepart - 1, colonne] = joueur.pion;
+                int ligneDeDepart = LigneDeDepart(joueur);
+
+                damier[ligneDeDepart, colonne] = joueur.pion;
             }
         }
 
+        private int IncrementDeplacement(Joueur joueur)
+        {
+            if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
+            {
+                return -1 * incrementDeDeplacement;
+            }
+
+            return incrementDeDeplacement;
+        }
+
+        private int LigneDeDepart(Joueur joueur)
+        {
+            if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
+            {
+                return ligneDepartJoueurBas;
+            }
+
+            return ligneDepartJoueurHaut;
+        }
+
     }
+
 }

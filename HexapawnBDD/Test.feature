@@ -39,4 +39,14 @@ Scenario: Lister les coups possibles de départ pour le joueur du Bas
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
     | 2:2       | 1:2   |
-    
+
+Scenario: Lister les coups possibles de départ pour le joueur du Haut
+    Given Le joueur du haut est Thomas, et il joue les pions R
+    Given Le joueur du bas est Paul, et il joue les pions V
+    Given ils démarrent une nouvelle partie
+    When ils démarrent une nouvelle partie
+    Then Thomas peut bouger en
+    | depart    | fin   |
+    | 0:0       | 1:0   |
+    | 0:1       | 1:1   |
+    | 0:2       | 1:2   |

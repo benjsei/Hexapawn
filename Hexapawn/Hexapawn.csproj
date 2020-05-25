@@ -32,12 +32,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Plateau.cs" />
-    <Compile Include="Position.cs" />
-    <Compile Include="Deplacement.cs" />
-    <Compile Include="Joueur.cs" />
-    <Compile Include="Partie.cs" />
-    <Compile Include="StringExtension.cs" />
+    <Compile Include="Jeu\Deplacement.cs" />
+    <Compile Include="Jeu\Joueur.cs" />
+    <Compile Include="Jeu\Partie.cs" />
+    <Compile Include="Jeu\Plateau.cs" />
+    <Compile Include="Jeu\Position.cs" />
+    <Compile Include="Extensions\StringExtension.cs" />
+    <Compile Include="Jeu\SensDeJeu.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jeu\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

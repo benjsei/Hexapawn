@@ -189,6 +189,41 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Lister les coups possibles de départ pour le joueur du Haut")]
+        public virtual void ListerLesCoupsPossiblesDeDepartPourLeJoueurDuHaut()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Lister les coups possibles de départ pour le joueur du Haut", null, ((string[])(null)));
+#line 43
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 44
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 45
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 46
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 47
+    testRunner.When("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table2.AddRow(new string[] {
+                        "0:0",
+                        "1:0"});
+            table2.AddRow(new string[] {
+                        "0:1",
+                        "1:1"});
+            table2.AddRow(new string[] {
+                        "0:2",
+                        "1:2"});
+#line 48
+    testRunner.Then("Thomas peut bouger en", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

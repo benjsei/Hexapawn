@@ -62,16 +62,14 @@ namespace HexapawnBDD
         {
            var deplacementStrings = table.CreateSet<DeplacementString>();
 
-           var deplacementsAttendus = deplacementStrings
-                .Select(deplacementString => new Deplacement(
-                deplacementString.Depart,
-                deplacementString.Fin));
+            var deplacementsAttendus = deplacementStrings
+                 .Select(deplacementString => deplacementString.enDeplacement());
 
             var deplacementsPossibles = plateau.DeplacementsPossibles(joueurBas);
 
-           
             Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
         }
+
 
         [Then("ils voient ce plateau (.*)")]
         public void ThenJeVoisCePlateau(string PlateauAttendu)
@@ -80,6 +78,19 @@ namespace HexapawnBDD
 
             Assert.AreEqual(PlateauAttendu, result);
 
+        }
+
+        [Then(@"Thomas peut bouger en")]
+        public void ThenThomasPeutBougerEn(Table table)
+        {
+            var deplacementStrings = table.CreateSet<DeplacementString>();
+
+            var deplacementsAttendus = deplacementStrings
+                 .Select(deplacementString => deplacementString.enDeplacement());
+
+            var deplacementsPossibles = plateau.DeplacementsPossibles(joueurHaut);
+
+            Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
         }
     }
 }
