@@ -33,17 +33,30 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Jeu\Deplacement.cs" />
-    <Compile Include="Jeu\Joueur.cs" />
     <Compile Include="Jeu\Partie.cs" />
     <Compile Include="Jeu\Plateau.cs" />
     <Compile Include="Jeu\Position.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Jeu\SensDeJeu.cs" />
     <Compile Include="Jeu\SensDePrise.cs" />
+    <Compile Include="Jeu\Joueurs\Joueur.cs" />
+    <Compile Include="Jeu\Joueurs\JoueurAleatoire.cs" />
+    <Compile Include="Jeu\Joueurs\JoueurIAMachineLearning.cs" />
+    <Compile Include="Jeu\Joueurs\IA\MachineLearning\Alternative.cs" />
+    <Compile Include="Jeu\Joueurs\IA\MachineLearning\Alternatives.cs" />
+    <Compile Include="Jeu\Joueurs\IA\MachineLearning\Choix.cs" />
+    <Compile Include="Extensions\IntExtension.cs" />
+    <Compile Include="Extensions\DoubleExtension.cs" />
+    <Compile Include="Extensions\ArrayExtension.cs" />
+    <Compile Include="Jeu\Joueurs\IAleatoire.cs" />
+    <Compile Include="Jeu\Joueurs\Aletoire.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Jeu\Joueurs\" />
+    <Folder Include="Jeu\Joueurs\IA\" />
+    <Folder Include="Jeu\Joueurs\IA\MachineLearning\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

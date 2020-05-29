@@ -3,7 +3,7 @@ namespace Hexapawn
 {
     public class Deplacement
     {
-        const string separtor = ":";
+        const string separateur = " ";
 
         public Position Depart { get; set; }
         public Position Fin { get; set; }
@@ -22,7 +22,7 @@ namespace Hexapawn
 
         override public string ToString()
         {
-            return Depart + separtor + Fin;
+            return Depart + separateur + Fin;
         }
 
         public override bool Equals(object ob)
@@ -40,6 +40,5 @@ namespace Hexapawn
         {
             return base.GetHashCode();
         }
-
     }
 }

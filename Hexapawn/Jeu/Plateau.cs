@@ -13,16 +13,16 @@ namespace Hexapawn
         private readonly Joueur joueurHaut;
         private readonly Joueur joueurBas;
 
-        private Joueur dernierJoueur;
-        private Joueur prochainJoueur
+        public Joueur JoueurActif;
+        private Joueur ProchainJoueur
         {
             get
             {
-                if (dernierJoueur == joueurHaut) {
+                if (JoueurActif == joueurHaut) {
                     return joueurBas;
                 }
 
-                if (dernierJoueur == joueurBas)
+                if (JoueurActif == joueurBas)
                 {
                     return joueurHaut;
                 }
@@ -41,7 +41,7 @@ namespace Hexapawn
             joueurBas.sensDeJeu = SensDeJeu.BasVersHaut;
             this.joueurBas = joueurBas;
 
-            Demarrer();
+            MettreEnPlace();
         }
 
         public String Afficher()
@@ -55,14 +55,26 @@ namespace Hexapawn
             return affichage;
         }
 
-        public void BougerPion(Joueur joueur, Position depart, Position arrivee)
+        public void TourSuivant()
         {
-            if (damier[depart.Ligne, depart.Colonne] == joueur.pion) {
+            JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
+        }
 
-                damier[depart.Ligne, depart.Colonne] = caseVide;
-                damier[arrivee.Ligne, arrivee.Colonne] = joueur.pion;
-                dernierJoueur = joueur;
-            } 
+        public void Jouer()
+        {
+            Deplacement deplacement = JoueurActif.ChoisirDeplacement(this, DeplacementsPossibles(JoueurActif));
+            BougerPion(JoueurActif, deplacement);
+        }
+
+        public void BougerPion(Joueur joueur, Deplacement deplacement)
+        {
+            if ((damier[deplacement.Depart.Ligne, deplacement.Depart.Colonne] == joueur.pion) &&
+                    (damier[deplacement.Fin.Ligne, deplacement.Fin.Colonne] != joueur.pion))
+                    {
+
+                damier[deplacement.Depart.Ligne, deplacement.Depart.Colonne] = caseVide;
+                damier[deplacement.Fin.Ligne, deplacement.Fin.Colonne] = joueur.pion;
+            }
         }
 
         public String AfficherColonne(int ligne)
@@ -102,23 +114,30 @@ namespace Hexapawn
             }
         }
 
+        public bool EstTerminee {
+            get
+            {
+                return gagnant != null;
+            }
+        }
+
         public Joueur gagnant
         {
             get
             {
-                if (EstDetruit(prochainJoueur))
+                if (EstDetruit(ProchainJoueur))
                 {
-                    return dernierJoueur;
+                    return JoueurActif;
                 }
 
-                if (AConquis(dernierJoueur))
+                if (AConquis(JoueurActif))
                 {
-                    return dernierJoueur;
+                    return JoueurActif;
                 }
 
-                if (EstBloque(prochainJoueur))
+                if (EstBloque(ProchainJoueur))
                 {
-                    return dernierJoueur;
+                    return JoueurActif;
                 }
 
                 return null;
@@ -221,7 +240,7 @@ namespace Hexapawn
             return null;
         }
 
-        private void Demarrer()
+        private void MettreEnPlace()
         {
             Vider();
             MettreEnPlace(joueurHaut);

@@ -3,7 +3,7 @@ namespace Hexapawn
 {
     public class Position
     {
-        private const char seperator = ':';
+        private const char separateur = ':';
 
         public int Ligne = 0;
         public int Colonne = 0;
@@ -16,7 +16,7 @@ namespace Hexapawn
 
         public Position(string coordonnees)
         {
-            var positions = coordonnees.Split(seperator);
+            var positions = coordonnees.Split(separateur);
 
             this.Ligne = Convert.ToInt32(positions[0]);
             this.Colonne = Convert.ToInt32(positions[1]);
@@ -36,6 +36,11 @@ namespace Hexapawn
         public override int GetHashCode()
         {
             return base.GetHashCode();
+        }
+
+        override public string ToString()
+        {
+            return Ligne.ToString() + separateur + Colonne.ToString();
         }
     }
 }

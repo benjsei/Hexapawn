@@ -5,7 +5,7 @@ namespace Hexapawn
     {
         private static readonly char empty = ' ';
 
-        public static char firstChar(this String str)
+        public static char PremiereLettre(this String str)
         {
             if (str.ToCharArray().GetLength(0) > 0)
             {

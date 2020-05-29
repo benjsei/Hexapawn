@@ -14,7 +14,7 @@ namespace HexapawnBDD
             this.Fin = Fin;
         }
 
-        public Deplacement enDeplacement()
+        public Deplacement EnDeplacement()
         {
             return new Deplacement(
                 Depart,
