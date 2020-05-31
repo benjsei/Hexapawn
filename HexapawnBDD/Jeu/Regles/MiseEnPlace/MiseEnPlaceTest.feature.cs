@@ -18,8 +18,8 @@ namespace HexapawnBDD.Jeu.Regles.MiseEnPlace
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("En tant que 2 adversaires")]
-    public partial class EnTantQue2AdversairesFeature
+    [NUnit.Framework.DescriptionAttribute("Mise en place du plateau")]
+    public partial class MiseEnPlaceDuPlateauFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,8 @@ namespace HexapawnBDD.Jeu.Regles.MiseEnPlace
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "En tant que 2 adversaires", "Je veux visualiser un plateau de Hexapawn\nAfin de pouvoir commencer une partie", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Mise en place du plateau", "En tant que 2 adversaires\nJe veux visualiser un plateau de Hexapawn\nAfin de pouvo" +
+                    "ir commencer une partie", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,16 +77,16 @@ namespace HexapawnBDD.Jeu.Regles.MiseEnPlace
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Plateau de départ", null, new string[] {
                         "MiseEnPlaceTest"});
-#line 9
+#line 10
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 10
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
-    testRunner.When("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 13
+    testRunner.When("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
     testRunner.Then("ils voient ce plateau RRR___VVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

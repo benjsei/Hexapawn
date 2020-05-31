@@ -1,4 +1,5 @@
-﻿Feature: En tant que Joueur
+﻿Feature: Lister les déplacements autorisés
+En tant que Joueur
 Je veux connaitre les coups autorisés
 Afin de pouvoir bouger mon pion dans les régles
 

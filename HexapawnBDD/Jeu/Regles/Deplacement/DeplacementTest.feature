@@ -1,4 +1,5 @@
-﻿Feature: En tant que Joueur
+﻿Feature: Déplacement des pions
+En tant que Joueur
 Je veux déplacer mes pions
 Afin de progresser dans la partie
 

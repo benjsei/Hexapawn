@@ -1,4 +1,5 @@
-﻿Feature: En tant que 2 adversaires
+﻿Feature: Mise en place du plateau
+En tant que 2 adversaires
 Je veux visualiser un plateau de Hexapawn
 Afin de pouvoir commencer une partie
 

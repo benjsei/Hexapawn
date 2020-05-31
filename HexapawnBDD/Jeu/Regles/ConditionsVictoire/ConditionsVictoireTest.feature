@@ -1,4 +1,5 @@
-﻿Feature: En tant que joueur
+﻿Feature: Conditions de victoire
+En tant que joueur
 Je veux connaitre les conditions de victoire
 Afin de pouvoir gagner une partie
 

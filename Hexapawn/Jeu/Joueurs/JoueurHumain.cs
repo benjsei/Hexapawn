@@ -13,8 +13,11 @@
         override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
         {
             int saisie = joueurHumainInterface.DemanderDeplacement(plateau, deplacementsPossibles);
-
-            return deplacementsPossibles[saisie];
+            if (saisie < deplacementsPossibles.Length)
+            {
+                return deplacementsPossibles[saisie];
+            }
+            return (Deplacement)deplacementsPossibles.PremierSinonVide();
         }
     }
 }

@@ -18,8 +18,8 @@ namespace HexapawnBDD.Jeu.Regles.ConditionsVictoire
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.0.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("En tant que joueur")]
-    public partial class EnTantQueJoueurFeature
+    [NUnit.Framework.DescriptionAttribute("Conditions de victoire")]
+    public partial class ConditionsDeVictoireFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,8 @@ namespace HexapawnBDD.Jeu.Regles.ConditionsVictoire
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "En tant que joueur", "Je veux connaitre les conditions de victoire\nAfin de pouvoir gagner une partie", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Conditions de victoire", "En tant que joueur\nJe veux connaitre les conditions de victoire\nAfin de pouvoir g" +
+                    "agner une partie", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -76,18 +77,18 @@ namespace HexapawnBDD.Jeu.Regles.ConditionsVictoire
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par conquète", null, new string[] {
                         "ConditionsVictoireTest"});
-#line 7
+#line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 8
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-    testRunner.Given("ils voient ce plateau _RRR___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
-    testRunner.When("Thomas bouge son pion de 1:0 à 2:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("ils voient ce plateau _RRR___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 12
+    testRunner.When("Thomas bouge son pion de 1:0 à 2:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
     testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -100,18 +101,18 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par conquète", null, new string[] {
                         "ConditionsVictoireTest"});
-#line 15
+#line 16
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 16
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 17
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
-    testRunner.Given("ils voient ce plateau _RRV___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
-    testRunner.When("Paul bouge son pion de 1:0 à 0:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("ils voient ce plateau _RRV___VV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
+    testRunner.When("Paul bouge son pion de 1:0 à 0:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
     testRunner.Then("Paul gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -124,18 +125,18 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par détruction", null, new string[] {
                         "ConditionsVictoireTest"});
-#line 24
+#line 25
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 25
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 26
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 27
-    testRunner.Given("ils voient ce plateau RRRV_____", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 28
-    testRunner.When("Thomas bouge son pion de 0:1 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("ils voient ce plateau RRRV_____", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 29
+    testRunner.When("Thomas bouge son pion de 0:1 à 1:0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 30
     testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -148,18 +149,18 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par blocage", null, new string[] {
                         "ConditionsVictoireTest"});
-#line 33
+#line 34
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 34
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 35
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 36
-    testRunner.Given("ils voient ce plateau RRRV_V_V_", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 37
-    testRunner.When("Thomas bouge son pion de 0:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("ils voient ce plateau RRRV_V_V_", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 38
+    testRunner.When("Thomas bouge son pion de 0:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 39
     testRunner.Then("Thomas gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -172,18 +173,18 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par blocage", null, new string[] {
                         "ConditionsVictoireTest"});
-#line 41
+#line 42
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 42
-    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 43
-    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 44
-    testRunner.Given("ils voient ce plateau _R_R_RVVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 45
-    testRunner.When("Paul bouge son pion de 2:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.Given("ils voient ce plateau _R_R_RVVV", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 46
+    testRunner.When("Paul bouge son pion de 2:1 à 1:1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
     testRunner.Then("Paul gagne la partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

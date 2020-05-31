@@ -144,6 +144,14 @@ namespace Hexapawn
             }
         }
 
+        private void MettreEnPlace()
+        {
+            Vider();
+            TirerAuSortLePremierJoueur();
+            MettreEnPlace(joueurHaut);
+            MettreEnPlace(joueurBas);
+        }
+
         private bool EstBloque(Joueur joueur)
         {
             return DeplacementsPossibles(joueur).Length == 0;
@@ -240,15 +248,7 @@ namespace Hexapawn
             return null;
         }
 
-        private void MettreEnPlace()
-        {
-            Vider();
-           // Melanger();
-            MettreEnPlace(joueurHaut);
-            MettreEnPlace(joueurBas);
-        }
-
-        private void Melanger()
+        private void TirerAuSortLePremierJoueur()
         {
             Aleatoire aleatoire = new Aleatoire();
             int chiffreAleatoire = aleatoire.ChiffreAleatoire(2);

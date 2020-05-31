@@ -71,17 +71,15 @@ namespace HexapawnBDD.Jeu.Joueurs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 3 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 3 deplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurHumain")]
-        public virtual void DeplacementChoisiParmi3Deplacements()
+        public virtual void DeplacementChoisiParmis3Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 3 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 3 deplacements", null, new string[] {
                         "JoueurHumain"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 9
- testRunner.Given("Je vois ce plateau VVV___RRR", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
             TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                         "depart",
@@ -95,19 +93,117 @@ this.ScenarioInitialize(scenarioInfo);
             table1.AddRow(new string[] {
                         "2:2",
                         "1:2"});
-#line 10
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table1, "And ");
-#line 15
- testRunner.When("Je choisie un déplacement 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
+ testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table1, "Given ");
+#line 14
+ testRunner.When("Je choisie un déplacement 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
             TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
                         "depart",
                         "fin"});
             table2.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+#line 15
+ testRunner.Then("le déplacement choisi est", ((string)(null)), table2, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 1 deplacement")]
+        [NUnit.Framework.CategoryAttribute("JoueurHumain")]
+        public virtual void DeplacementChoisiParmis1Deplacement()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 1 deplacement", null, new string[] {
+                        "JoueurHumain"});
+#line 20
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table3 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table3.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+#line 21
+ testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table3, "Given ");
+#line 24
+ testRunner.When("Je choisie un déplacement 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table4 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table4.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+#line 25
+ testRunner.Then("le déplacement choisi est", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi n\'est pas dans les choix possibles")]
+        [NUnit.Framework.CategoryAttribute("JoueurHumain")]
+        public virtual void DeplacementChoisiNestPasDansLesChoixPossibles()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi n\'est pas dans les choix possibles", null, new string[] {
+                        "JoueurHumain"});
+#line 30
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table5.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+            table5.AddRow(new string[] {
                         "2:1",
                         "1:1"});
-#line 16
- testRunner.Then("le déplacement choisi est", ((string)(null)), table2, "Then ");
+            table5.AddRow(new string[] {
+                        "2:2",
+                        "1:2"});
+#line 31
+ testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table5, "Given ");
+#line 36
+ testRunner.When("Je choisie un déplacement 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table6 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table6.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+#line 37
+ testRunner.Then("le déplacement choisi est", ((string)(null)), table6, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 0 deplacement")]
+        [NUnit.Framework.CategoryAttribute("JoueurHumain")]
+        public virtual void DeplacementChoisiParmis0Deplacement()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 0 deplacement", null, new string[] {
+                        "JoueurHumain"});
+#line 42
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line hidden
+            TechTalk.SpecFlow.Table table7 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+#line 43
+ testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table7, "Given ");
+#line 45
+ testRunner.When("Je choisie un déplacement 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 46
+ testRunner.Then("le déplacement choisi est vide", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
