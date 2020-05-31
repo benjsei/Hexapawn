@@ -3,16 +3,17 @@ namespace Hexapawn
 {
     public class Partie
     {
+        private int nombreJoueur = 2;
         public Joueur joueur1;
         public Joueur joueur2;
 
-        private readonly Random random = new Random();
+        private readonly Aleatoire aleatoire = new Aleatoire();
 
         private Joueur JoueurAleatoire
         {
             get
             {
-                return random.Next() % 2 == 1 ? joueur1 : joueur2;
+                return aleatoire.ChiffreAleatoire(nombreJoueur) == 1 ? joueur1 : joueur2;
             }
         }
 
@@ -44,7 +45,7 @@ namespace Hexapawn
                 }
                 else
                 {
-                    plateau.TourSuivant();
+                    plateau.AuJoueurSuivant();
                 }
             }
         }

@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HexapawnBDD.Partie
+namespace HexapawnBDD.Jeu.Partie
 {
     using TechTalk.SpecFlow;
     

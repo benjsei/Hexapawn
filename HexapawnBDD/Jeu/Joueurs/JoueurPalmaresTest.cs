@@ -9,12 +9,11 @@ namespace HexapawnBDD.Jeu.Joueurs
     public class JoueurPalmaresTest
     {
         private Joueur joueur;
-        private Aleatoire aleatoire = new Aleatoire();
 
         [Given(@"Je suis Paul et je joue les pions V")]
         public void GivenJeSuisPaulEtJeJoueLesPionsV()
         {
-            joueur = new Joueur("Paul", "V", aleatoire);
+            joueur = new Joueur("Paul", "V");
         }
 
         [Given(@"Je fais (.*) partie\(s\) gagnante\(s\)")]

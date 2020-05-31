@@ -1,7 +1,7 @@
 ﻿using System;
 using Hexapawn;
 
-namespace HexapawnBDD.Jeu.Joueurs
+namespace HexapawnBDD.Mock
 {
     public class AleatoireMock: IAleatoire
     {

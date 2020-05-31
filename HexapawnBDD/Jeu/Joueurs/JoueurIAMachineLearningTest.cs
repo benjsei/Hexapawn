@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using Hexapawn;
+using HexapawnBDD.Mock;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -10,7 +11,7 @@ namespace HexapawnBDD.Jeu.Joueurs
     public class JoueurIAMachineLearningTest
     {
         private readonly Joueur joueurIA = new JoueurIAMachineLearning("Paul", "V", new AleatoireMock());
-        private readonly Joueur joueur2 = new Joueur("Thomas", "R", new AleatoireMock());
+        private readonly Joueur joueur2 = new Joueur("Thomas", "R");
         private Deplacement[] deplacementsPossibles;
         private Deplacement deplacementChoisi;
         private Plateau plateau;

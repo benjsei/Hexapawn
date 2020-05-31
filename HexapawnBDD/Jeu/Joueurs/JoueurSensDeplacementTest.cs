@@ -11,12 +11,11 @@ namespace HexapawnBDD.Jeu.Joueurs
         private Joueur joueur;
         private const int IncrementVersLeHaut = -1;
         private const int IncrementVersLeBas = 1;
-        private readonly Aleatoire aleatoire = new Aleatoire();
 
         [Given(@"Je suis un joueur en bas du plateau")]
         public void GivenJeSuisUnJoueurEnBasDuPlateau()
         {
-            joueur = new Joueur("Paul", "V", aleatoire)
+            joueur = new Joueur("Paul", "V")
             {
                 sensDeJeu = SensDeJeu.BasVersHaut
             };
@@ -25,7 +24,7 @@ namespace HexapawnBDD.Jeu.Joueurs
         [Given(@"Je suis un joueur en haut du plateau")]
         public void GivenJeSuisUnJoueurEnHautDuPlateau()
         {
-            joueur = new Joueur("Thomas", "R", aleatoire)
+            joueur = new Joueur("Thomas", "R")
             {
                 sensDeJeu = SensDeJeu.HautVersBas
             };

@@ -12,20 +12,18 @@ namespace HexapawnBDD
         private Plateau plateau;
         private Joueur joueurHaut;
         private Joueur joueurBas;
-        private readonly Aleatoire aleatoire = new Aleatoire();
-
 
         [Given(@"Le joueur du haut est (.*), et il joue les pions (.*)"), Scope(Tag = "ConditionsVictoireTest")]
         public void GivenLeJoueurDuHautEstThomasEtIlJoueLesPionsR(string nom, string pion)
         {
-            joueurHaut = new Joueur(nom, pion, aleatoire);
+            joueurHaut = new Joueur(nom, pion);
         }
 
 
         [Given(@"Le joueur du bas est (.*), et il joue les pions (.*)"), Scope(Tag = "ConditionsVictoireTest")]
         public void GivenLeJoueurDuBasEstPaulEtIlJoueLesPionsV(string nom, string pion)
         {
-            joueurBas = new Joueur(nom, pion, aleatoire);
+            joueurBas = new Joueur(nom, pion);
         }
 
         [Given(@"ils voient ce plateau (.*)"), Scope(Tag = "ConditionsVictoireTest")]

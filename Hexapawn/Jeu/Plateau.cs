@@ -10,8 +10,8 @@ namespace Hexapawn
         private const int ligneDepartJoueurHaut = 0;
         private const int ligneDepartJoueurBas = taille - 1;
 
-        private readonly Joueur joueurHaut;
-        private readonly Joueur joueurBas;
+        private Joueur joueurHaut;
+        private Joueur joueurBas;
 
         public Joueur JoueurActif;
         private Joueur ProchainJoueur
@@ -55,7 +55,7 @@ namespace Hexapawn
             return affichage;
         }
 
-        public void TourSuivant()
+        public void AuJoueurSuivant()
         {
             JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
         }
@@ -243,8 +243,21 @@ namespace Hexapawn
         private void MettreEnPlace()
         {
             Vider();
+           // Melanger();
             MettreEnPlace(joueurHaut);
             MettreEnPlace(joueurBas);
+        }
+
+        private void Melanger()
+        {
+            Aleatoire aleatoire = new Aleatoire();
+            int chiffreAleatoire = aleatoire.ChiffreAleatoire(2);
+            if (chiffreAleatoire == 1)
+            {
+                Joueur joueurSauvegarde = joueurBas;
+                joueurBas = joueurHaut;
+                joueurHaut = joueurSauvegarde;
+            }
         }
 
         private void Vider()

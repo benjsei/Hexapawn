@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HexapawnBDD.Regles.DeplacementsPossibles
+namespace HexapawnBDD.Jeu.Regles.DeplacementsPossibles
 {
     using TechTalk.SpecFlow;
     

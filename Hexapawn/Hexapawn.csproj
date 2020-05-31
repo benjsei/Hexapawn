@@ -48,8 +48,11 @@
     <Compile Include="Extensions\IntExtension.cs" />
     <Compile Include="Extensions\DoubleExtension.cs" />
     <Compile Include="Extensions\ArrayExtension.cs" />
-    <Compile Include="Jeu\Joueurs\IAleatoire.cs" />
-    <Compile Include="Jeu\Joueurs\Aletoire.cs" />
+    <Compile Include="Jeu\Aletoire.cs" />
+    <Compile Include="Jeu\IAleatoire.cs" />
+    <Compile Include="Jeu\Joueurs\JoueurHumain.cs" />
+    <Compile Include="Jeu\Joueurs\IA\JoueurHumain\IJoueurHumainInterface.cs" />
+    <Compile Include="JoueurHumainInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />
@@ -57,6 +60,7 @@
     <Folder Include="Jeu\Joueurs\" />
     <Folder Include="Jeu\Joueurs\IA\" />
     <Folder Include="Jeu\Joueurs\IA\MachineLearning\" />
+    <Folder Include="Jeu\Joueurs\IA\JoueurHumain\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

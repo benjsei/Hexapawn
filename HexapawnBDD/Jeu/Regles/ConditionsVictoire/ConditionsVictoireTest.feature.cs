@@ -10,7 +10,7 @@
 // ------------------------------------------------------------------------------
 #region Designer generated code
 #pragma warning disable
-namespace HexapawnBDD.Regles.ConditionsVictoire
+namespace HexapawnBDD.Jeu.Regles.ConditionsVictoire
 {
     using TechTalk.SpecFlow;
     

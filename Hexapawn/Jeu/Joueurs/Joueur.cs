@@ -5,7 +5,6 @@ namespace Hexapawn
     {
         public readonly string nom;
         public readonly string pion;
-        public readonly IAleatoire aleatoire;
         public SensDeJeu sensDeJeu;
 
         private int victoire = 0;
@@ -13,11 +12,10 @@ namespace Hexapawn
         private const string palmaresFormat = "{0} : {1} Victoire(s) pour {2} Combat(s) ({3:0.00}%).";
         private const int incrementDeDeplacement = 1;
 
-        public Joueur(string nom, string pion, IAleatoire aleatoire)
+        public Joueur(string nom, string pion)
         {
             this.nom = nom;
             this.pion = pion;
-            this.aleatoire = aleatoire;
         }
 
         public int IncrementDeplacement

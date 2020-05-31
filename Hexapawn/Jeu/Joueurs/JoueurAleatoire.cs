@@ -3,10 +3,11 @@ namespace Hexapawn
 {
     public class JoueurAleatoire : Joueur
     {
+        private readonly IAleatoire aleatoire;
 
-        public JoueurAleatoire(string nom, string pion, IAleatoire aleatoire) : base(nom, pion, aleatoire)
+        public JoueurAleatoire(string nom, string pion, IAleatoire aleatoire) : base(nom, pion)
         {
-
+            this.aleatoire = aleatoire;
         }
 
         public override Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)

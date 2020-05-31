@@ -4,10 +4,11 @@
     {
 
         private readonly Alternatives alternatives = new Alternatives();
+        private readonly IAleatoire aleatoire;
 
-        public JoueurIAMachineLearning(string nom, string pion, IAleatoire aleatoire) : base(nom, pion, aleatoire)
+        public JoueurIAMachineLearning(string nom, string pion, IAleatoire aleatoire) : base(nom, pion)
         {
-
+            this.aleatoire = aleatoire;
         }
         
         override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
