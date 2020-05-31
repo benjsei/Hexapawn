@@ -5,7 +5,7 @@
 
 #Rule: Régle 1 - Le deplacement est choisi de maniere aléatoire dans une liste de déplacement.
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmis 3 deplacements 
+Scenario: Deplacement choisi parmi 3 deplacements 
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
@@ -32,7 +32,7 @@ Scenario: Deplacement choisi parmi 4 deplacements
     | 2:2       | 1:2   |
 
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmis 1 deplacements 
+Scenario: Deplacement choisi parmi 1 deplacements 
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
@@ -58,7 +58,7 @@ Scenario: Index tiré trop grand
 
 #Rule: Régle 3 - Le deplacement choisi retourné pour une liste de déplacement sans élement est vide.
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmis 0 deplacement
+Scenario: Deplacement choisi parmi 0 deplacement
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
 	And l'index tiré aléatoirement est 10

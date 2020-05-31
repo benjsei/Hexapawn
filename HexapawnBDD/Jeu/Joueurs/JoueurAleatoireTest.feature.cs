@@ -71,11 +71,11 @@ namespace HexapawnBDD.Jeu.Joueurs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 3 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 3 deplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
-        public virtual void DeplacementChoisiParmis3Deplacements()
+        public virtual void DeplacementChoisiParmi3Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 3 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 3 deplacements", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -158,11 +158,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 1 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 1 deplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
-        public virtual void DeplacementChoisiParmis1Deplacements()
+        public virtual void DeplacementChoisiParmi1Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 1 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 1 deplacements", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
@@ -236,11 +236,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmis 0 deplacement")]
+        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 0 deplacement")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
-        public virtual void DeplacementChoisiParmis0Deplacement()
+        public virtual void DeplacementChoisiParmi0Deplacement()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmis 0 deplacement", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 0 deplacement", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);

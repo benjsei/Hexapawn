@@ -4,7 +4,7 @@
 	Afin de faire avancer mes pions
 
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmis 3 deplacements 
+Scenario: Deplacement choisi parmi 3 deplacements 
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
@@ -16,7 +16,7 @@ Scenario: Deplacement choisi parmis 3 deplacements
     | 2:0       | 1:0   |
 
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmis 1 deplacement
+Scenario: Deplacement choisi parmi 1 deplacement
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
@@ -26,7 +26,7 @@ Scenario: Deplacement choisi parmis 1 deplacement
     | 2:0       | 1:0   |
 
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmis 0 deplacement
+Scenario: Deplacement choisi parmi 0 deplacement
 	Given J'ai ces deplacements disponibles
 	| depart    | fin   |
 	When Je choisie un déplacement 
