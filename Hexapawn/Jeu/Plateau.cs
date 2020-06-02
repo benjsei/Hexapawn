@@ -114,10 +114,10 @@ namespace Hexapawn
             }
         }
 
-        public bool EstTerminee {
+        public bool EstPasTerminee {
             get
             {
-                return gagnant != null;
+                return gagnant == null;
             }
         }
 
@@ -147,7 +147,6 @@ namespace Hexapawn
         private void MettreEnPlace()
         {
             Vider();
-            TirerAuSortLePremierJoueur();
             MettreEnPlace(joueurHaut);
             MettreEnPlace(joueurBas);
         }
@@ -246,18 +245,6 @@ namespace Hexapawn
             }
 
             return null;
-        }
-
-        private void TirerAuSortLePremierJoueur()
-        {
-            Aleatoire aleatoire = new Aleatoire();
-            int chiffreAleatoire = aleatoire.ChiffreAleatoire(2);
-            if (chiffreAleatoire == 1)
-            {
-                Joueur joueurSauvegarde = joueurBas;
-                joueurBas = joueurHaut;
-                joueurHaut = joueurSauvegarde;
-            }
         }
 
         private void Vider()

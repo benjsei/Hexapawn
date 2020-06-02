@@ -53,6 +53,8 @@
     <Compile Include="Jeu\Joueurs\JoueurHumain.cs" />
     <Compile Include="Jeu\Joueurs\IA\JoueurHumain\IJoueurHumainInterface.cs" />
     <Compile Include="JoueurHumainInterface.cs" />
+    <Compile Include="PartieInterface.cs" />
+    <Compile Include="Jeu\IPartieInterface.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />

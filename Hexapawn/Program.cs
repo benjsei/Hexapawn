@@ -10,6 +10,7 @@ namespace Hexapawn
         {
             Console.WriteLine("Hello World!");
 
+            IPartieInterface partieInterface = new PartieInterface();
             IAleatoire aleatoire = new Aleatoire();
             IJoueurHumainInterface joueurHumainInterface = new JoueurHumainInterface();
 
@@ -18,24 +19,19 @@ namespace Hexapawn
             Joueur joueurHautHumain = new JoueurHumain("Moi", "R", joueurHumainInterface);
             //Joueur joueurBas = new JoueurAleatoire("Paul", "V");
 
-            Plateau plateau = new Plateau(joueurHaut, joueurBas);
-            plateau.Afficher();
-            Console.WriteLine("Plateau : \n" + plateau.Afficher());
-
             for(int i = 0; i < 1000; i++) {
-                Partie partie = new Partie(joueurHaut, joueurBas);
+                Partie partie = new Partie(joueurHaut, joueurBas, partieInterface, aleatoire);
                 partie.Jouer();
             }
 
             Console.WriteLine("Terminée");
-
 
             Console.WriteLine(joueurHaut.Palmares);
             Console.WriteLine(joueurBas.Palmares);
 
             for (int i = 0; i < 1000; i++)
             {
-                Partie partie = new Partie(joueurHaut, joueurBas);
+                Partie partie = new Partie(joueurHaut, joueurBas, partieInterface, aleatoire);
                 partie.Jouer();
             }
 
@@ -46,7 +42,7 @@ namespace Hexapawn
             Console.WriteLine(joueurBas.Palmares);
 
             Console.WriteLine("Vraie partie");
-            Partie partieVraie = new Partie(joueurHautHumain, joueurBas);
+            Partie partieVraie = new Partie(joueurHautHumain, joueurBas, partieInterface, aleatoire);
             partieVraie.Jouer();
 
             
