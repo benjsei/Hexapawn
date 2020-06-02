@@ -178,11 +178,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Paul peut prendre un pion de Thomas")]
+        [NUnit.Framework.DescriptionAttribute("Paul peut prendre un pion de Thomas par la gauche")]
         [NUnit.Framework.CategoryAttribute("DeplacementsPossiblesTest")]
-        public virtual void PaulPeutPrendreUnPionDeThomas()
+        public virtual void PaulPeutPrendreUnPionDeThomasParLaGauche()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul peut prendre un pion de Thomas", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul peut prendre un pion de Thomas par la gauche", null, new string[] {
                         "DeplacementsPossiblesTest"});
 #line 45
 this.ScenarioInitialize(scenarioInfo);
@@ -210,6 +210,43 @@ this.ScenarioInitialize(scenarioInfo);
                         "1:2"});
 #line 50
     testRunner.Then("Paul peut bouger en", ((string)(null)), table4, "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Paul peut prendre un pion de Thomas par la droite")]
+        [NUnit.Framework.CategoryAttribute("DeplacementsPossiblesTest")]
+        public virtual void PaulPeutPrendreUnPionDeThomasParLaDroite()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul peut prendre un pion de Thomas par la droite", null, new string[] {
+                        "DeplacementsPossiblesTest"});
+#line 57
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 58
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 59
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 60
+    testRunner.Given("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 61
+    testRunner.When("Thomas bouge son pion de 0:2 à 1:2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+            TechTalk.SpecFlow.Table table5 = new TechTalk.SpecFlow.Table(new string[] {
+                        "depart",
+                        "fin"});
+            table5.AddRow(new string[] {
+                        "2:0",
+                        "1:0"});
+            table5.AddRow(new string[] {
+                        "2:1",
+                        "1:1"});
+            table5.AddRow(new string[] {
+                        "2:1",
+                        "1:2"});
+#line 62
+    testRunner.Then("Paul peut bouger en", ((string)(null)), table5, "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

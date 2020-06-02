@@ -22,12 +22,7 @@ namespace Hexapawn
                     return joueurBas;
                 }
 
-                if (JoueurActif == joueurBas)
-                {
-                    return joueurHaut;
-                }
-
-                return null;
+                return joueurHaut;
             }
         }
 
@@ -119,7 +114,7 @@ namespace Hexapawn
             }
         }
 
-        public bool EstPasTerminee {
+        public virtual bool EstPasTerminee {
             get
             {
                 return Gagnant == null;

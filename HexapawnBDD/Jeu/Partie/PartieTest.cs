@@ -43,9 +43,9 @@ namespace HexapawnBDD
         [When(@"Un joueur gagne au second coup")]
         public void WhenUnDesJoueursGagneAuSecond()
         {
-            plateau.SetupSequence(a => a.Gagnant)
-                .Returns((Joueur)null)
-                .Returns(joueurBas);
+            plateau.SetupSequence(a => a.EstPasTerminee)
+                .Returns(true)
+                .Returns(false);
             partie.Jouer();
         }
 
@@ -53,14 +53,14 @@ namespace HexapawnBDD
         public void ThenLeJoueurGagnantAfficheEstThomas(string nom)
         {
             var gagnant = nom == "Thomas" ? joueurHaut : joueurBas;
-            partieInterface.Verify(a => a.AfficherResultat(gagnant), Times.Once());
+            partieInterface.Verify(a => a.AfficherResultat(gagnant), Times.AtMostOnce());
         }
 
         [Then(@"(.*) coups ont été joués")]
         public void ThenToursSontPasses(int nombredecoups)
         {
             
-            plateau.Verify(a => a.AuJoueurSuivant(), Times.Exactly(nombredecoups));
+            plateau.Verify(a => a.AuJoueurSuivant(), Times.Exactly(nombredecoups - 1));
         }
 
         [Then(@"Les joueurs apprennent")]

@@ -42,7 +42,7 @@ Scenario: Paul est bloqué par un pion de Thomas
 
 #Rule: Règle 3 - Les pions peuvent prendre en diagonale un pion adverse.
 @DeplacementsPossiblesTest
-Scenario: Paul peut prendre un pion de Thomas
+Scenario: Paul peut prendre un pion de Thomas par la gauche
     Given Le joueur du haut est Thomas, et il joue les pions R
     Given Le joueur du bas est Paul, et il joue les pions V
     Given ils démarrent une nouvelle partie
@@ -52,3 +52,15 @@ Scenario: Paul peut prendre un pion de Thomas
     | 2:1       | 1:1   |
     | 2:1       | 1:0   |
     | 2:2       | 1:2   |
+
+@DeplacementsPossiblesTest
+Scenario: Paul peut prendre un pion de Thomas par la droite
+    Given Le joueur du haut est Thomas, et il joue les pions R
+    Given Le joueur du bas est Paul, et il joue les pions V
+    Given ils démarrent une nouvelle partie
+    When Thomas bouge son pion de 0:2 à 1:2
+    Then Paul peut bouger en
+    | depart    | fin   |
+    | 2:0       | 1:0   |
+    | 2:1       | 1:1   |
+    | 2:1       | 1:2   |

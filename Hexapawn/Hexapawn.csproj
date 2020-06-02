@@ -18,6 +18,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ExternalConsole>true</ExternalConsole>
+    <Prefer32bit>false</Prefer32bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|anycpu' ">
     <Optimize>true</Optimize>
@@ -25,6 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ExternalConsole>true</ExternalConsole>
+    <Prefer32bit>false</Prefer32bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -52,7 +54,6 @@
     <Compile Include="Jeu\Partie.cs" />
     <Compile Include="Jeu\Plateau.cs" />
     <Compile Include="Jeu\Position.cs" />
-    <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Jeu\SensDeJeu.cs" />
     <Compile Include="Jeu\SensDePrise.cs" />
     <Compile Include="Jeu\Joueurs\Joueur.cs" />
