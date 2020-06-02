@@ -1,8 +1,9 @@
-﻿namespace Hexapawn
+﻿using System;
+
+namespace Hexapawn
 {
     public class JoueurIAMachineLearning : Joueur
     {
-
         private readonly Alternatives alternatives = new Alternatives();
         private readonly IAleatoire aleatoire;
 
@@ -10,7 +11,7 @@
         {
             this.aleatoire = aleatoire;
         }
-        
+
         override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
         {
             return alternatives.ChoisirDeplacement(plateau.Afficher(), deplacementsPossibles, aleatoire);

@@ -1,7 +1,7 @@
 ﻿using System;
 using Hexapawn;
 
-namespace HexapawnBDD.Mock
+namespace HexapawnBDD
 {
     public class AleatoireMock: IAleatoire
     {
@@ -9,6 +9,12 @@ namespace HexapawnBDD.Mock
         public int ChiffreAleatoire(int max)
         {
             return ChiffreAleatoireRetour;
+        }
+
+        public static bool VraiOuFauxAleatoireRetour;
+        public bool VraiOuFauxAleatoire()
+        {
+            return VraiOuFauxAleatoireRetour;
         }
     }
 }

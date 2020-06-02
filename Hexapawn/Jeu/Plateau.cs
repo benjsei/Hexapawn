@@ -3,15 +3,15 @@ using System.Collections.Generic;
 
 namespace Hexapawn
 {
-    public class Plateau
+    public class Plateau : IPlateau
     {
         private const int taille = 3;
         private const string caseVide = "_";
         private const int ligneDepartJoueurHaut = 0;
         private const int ligneDepartJoueurBas = taille - 1;
 
-        private Joueur joueurHaut;
-        private Joueur joueurBas;
+        private readonly Joueur joueurHaut;
+        private readonly Joueur joueurBas;
 
         public Joueur JoueurActif;
         private Joueur ProchainJoueur
@@ -44,6 +44,11 @@ namespace Hexapawn
             MettreEnPlace();
         }
 
+        public void SelectionnerJoueurActif(bool face)
+        {
+            JoueurActif = face ? joueurBas : joueurHaut;
+        }
+
         public String Afficher()
         {
             var affichage = String.Empty;
@@ -55,7 +60,7 @@ namespace Hexapawn
             return affichage;
         }
 
-        public void AuJoueurSuivant()
+        public virtual void AuJoueurSuivant()
         {
             JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
         }
@@ -117,11 +122,11 @@ namespace Hexapawn
         public bool EstPasTerminee {
             get
             {
-                return gagnant == null;
+                return Gagnant == null;
             }
         }
 
-        public Joueur gagnant
+        public virtual Joueur Gagnant
         {
             get
             {
@@ -142,6 +147,13 @@ namespace Hexapawn
 
                 return null;
             }
+        }
+
+        public virtual void Enseigner()
+        {
+            bool joueurBasGagnant = Gagnant == joueurBas;
+            joueurBas.Apprendre(joueurBasGagnant);
+            joueurHaut.Apprendre(!joueurBasGagnant);
         }
 
         private void MettreEnPlace()
@@ -292,5 +304,15 @@ namespace Hexapawn
 
             return ligneDepartJoueurBas;
         }
+    }
+
+    public interface IPlateau
+    {
+        bool EstPasTerminee { get; }
+        Joueur Gagnant { get; }
+        void SelectionnerJoueurActif(bool face);
+        void AuJoueurSuivant();
+        void Jouer();
+        void Enseigner();
     }
 }

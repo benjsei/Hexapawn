@@ -60,7 +60,7 @@ namespace HexapawnBDD
         [Then(@"(.*) gagne la partie"), Scope(Tag = "ConditionsVictoireTest")]
         public void ThenThomasGagneLaPartie(string nom)
         {
-            Assert.AreEqual(plateau.gagnant.nom, nom);
+            Assert.AreEqual(plateau.Gagnant.nom, nom);
         }
     }
 }

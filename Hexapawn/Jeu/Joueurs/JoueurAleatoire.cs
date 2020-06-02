@@ -1,4 +1,5 @@
 ﻿using System;
+
 namespace Hexapawn
 {
     public class JoueurAleatoire : Joueur

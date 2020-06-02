@@ -9,7 +9,8 @@
         {
             this.joueurHumainInterface = joueurHumainInterface;
         }
-        
+
+
         override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
         {
             int saisie = joueurHumainInterface.DemanderDeplacement(plateau, deplacementsPossibles);

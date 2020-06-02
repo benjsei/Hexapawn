@@ -1,7 +1,7 @@
 ﻿using System;
 using Hexapawn;
 
-namespace HexapawnBDD.Mock
+namespace HexapawnBDD
 {
     public class JoueurHumainInterfaceMock : IJoueurHumainInterface
     {

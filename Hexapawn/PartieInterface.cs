@@ -3,9 +3,10 @@ namespace Hexapawn
 {
     public class PartieInterface : IPartieInterface
     {
-        public void AfficherGagnant(Joueur gagnant)
+        public void AfficherResultat(Joueur gagnant)
         {
             Console.Write("Le gagnant est : " + gagnant.nom + "\n");
+            Console.WriteLine(gagnant.Palmares);            
         }
     }
 }
