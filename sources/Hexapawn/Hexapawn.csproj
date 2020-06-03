@@ -63,6 +63,8 @@
     <Compile Include="JoueurHumainInterface.cs" />
     <Compile Include="PartieInterface.cs" />
     <Compile Include="Jeu\IPartieInterface.cs" />
+    <Compile Include="Jeu\IPlateau.cs" />
+    <Compile Include="Jeu\Damier.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />

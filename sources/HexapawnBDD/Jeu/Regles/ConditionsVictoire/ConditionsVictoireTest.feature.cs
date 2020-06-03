@@ -71,11 +71,11 @@ namespace HexapawnBDD.Jeu.Regles.ConditionsVictoire
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Thomas gagne par conquète")]
+        [NUnit.Framework.DescriptionAttribute("Thomas gagne par conquête")]
         [NUnit.Framework.CategoryAttribute("ConditionsVictoireTest")]
         public virtual void ThomasGagneParConquete()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par conquète", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Thomas gagne par conquête", null, new string[] {
                         "ConditionsVictoireTest"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -95,11 +95,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Paul gagne par conquète")]
+        [NUnit.Framework.DescriptionAttribute("Paul gagne par conquête")]
         [NUnit.Framework.CategoryAttribute("ConditionsVictoireTest")]
         public virtual void PaulGagneParConquete()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par conquète", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Paul gagne par conquête", null, new string[] {
                         "ConditionsVictoireTest"});
 #line 16
 this.ScenarioInitialize(scenarioInfo);

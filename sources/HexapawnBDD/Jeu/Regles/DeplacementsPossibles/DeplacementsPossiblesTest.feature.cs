@@ -250,6 +250,29 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Affichage des déplacements possibles sousd forme de liste formatée.")]
+        [NUnit.Framework.CategoryAttribute("DeplacementsPossiblesTest")]
+        public virtual void AffichageDesDeplacementsPossiblesSousdFormeDeListeFormatee_()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Affichage des déplacements possibles sousd forme de liste formatée.", null, new string[] {
+                        "DeplacementsPossiblesTest"});
+#line 70
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 71
+    testRunner.Given("Le joueur du haut est Thomas, et il joue les pions R", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 72
+    testRunner.Given("Le joueur du bas est Paul, et il joue les pions V", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 73
+    testRunner.When("ils démarrent une nouvelle partie", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 74
+    testRunner.Then("Thomas peut visialiser cette liste formatée pour faire son choix : 0 : 0:0 1:0 \\n" +
+                    "1 : 0:1 1:1 \\n2 : 0:2 1:2 \\n", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

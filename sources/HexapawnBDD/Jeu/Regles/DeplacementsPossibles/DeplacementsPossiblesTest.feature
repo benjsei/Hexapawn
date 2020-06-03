@@ -64,3 +64,11 @@ Scenario: Paul peut prendre un pion de Thomas par la droite
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
     | 2:1       | 1:2   |
+
+#Rule: Règle 4 - Les déplacements possibles peuvent s'afficher en forme de liste formatée.
+@DeplacementsPossiblesTest
+Scenario: Affichage des déplacements possibles sousd forme de liste formatée.
+    Given Le joueur du haut est Thomas, et il joue les pions R
+    Given Le joueur du bas est Paul, et il joue les pions V
+    When ils démarrent une nouvelle partie
+    Then Thomas peut visialiser cette liste formatée pour faire son choix : 0 : 0:0 1:0 \n1 : 0:1 1:1 \n2 : 0:2 1:2 \n

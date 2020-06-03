@@ -76,5 +76,14 @@ namespace HexapawnBDD
 
             Assert.AreEqual(deplacementsAttendus, deplacementsPossibles);
         }
+
+        [Then(@"Thomas peut visialiser cette liste formatée pour faire son choix : (.*)"), Scope(Tag = "DeplacementsPossiblesTest")]
+        public void ThenThomasPeutVisialiserCetteListeFormateePourFaireSonChoix(string listeFromatee)
+        {
+            var deplacementsPossibles = plateau.DeplacementsPossibles(joueurHaut).Afficher();
+
+            Assert.AreEqual(listeFromatee.Replace(@"\n", "\n"), deplacementsPossibles);
+        }
+
     }
 }

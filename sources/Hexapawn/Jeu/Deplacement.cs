@@ -14,7 +14,7 @@ namespace Hexapawn
             this.Fin = Fin;
         }
 
-        public Deplacement(String CoordoneesDepart, String CoordoneesFin)
+        public Deplacement(string CoordoneesDepart, string CoordoneesFin)
         {
             this.Depart = new Position(CoordoneesDepart);
             this.Fin = new Position(CoordoneesFin);
