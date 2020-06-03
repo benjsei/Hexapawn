@@ -15,7 +15,7 @@ namespace HexapawnBDD.Jeu.Joueurs
         private Deplacement deplacementChoisi;
         private Plateau plateau;
 
-        [Given(@"J'ai ces deplacements disponibles"), Scope(Tag = "JoueurIAMachineLearningTest")]
+        [Given(@"J'ai ces déplacements disponibles"), Scope(Tag = "JoueurIAMachineLearningTest")]
         public void GivenJaiCesDeplacementsDisponibles(Table table)
         {
             var deplacementStrings = table.CreateSet<DeplacementString>();

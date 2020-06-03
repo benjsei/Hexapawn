@@ -16,7 +16,7 @@ namespace Hexapawn
             Joueur joueurBas = new JoueurIAMachineLearning("PaulLIntello", "V", aleatoire);
             Joueur joueurHautHumain = new JoueurHumain("Moi", "R", joueurHumainInterface);
 
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("HexaPawn : Apprentissage IA");
 
 
             for (int i = 0; i < 1000; i++) {
@@ -25,13 +25,24 @@ namespace Hexapawn
                 partie.Jouer();
             }
 
-            Console.WriteLine("Terminée");
+            Console.WriteLine("HexaPawn : Apprentissage IA Terminée");
 
-            Console.WriteLine("Vraie partie");
+            Console.WriteLine("HexaPawn : Jeu ");
 
-            IPlateau plateauVrai = new Plateau(joueurHautHumain, joueurBas);
-            Partie partieVraie = new Partie(plateauVrai, partieInterface, aleatoire);
-            partieVraie.Jouer();
+            bool voulezVousContinuer = true;
+
+            while(voulezVousContinuer)
+            {
+                IPlateau plateauVrai = new Plateau(joueurHautHumain, joueurBas);
+                Partie partieVraie = new Partie(plateauVrai, partieInterface, aleatoire);
+                partieVraie.Jouer();
+
+                Console.WriteLine("Voulez-vous rejouer ? (O/N)");
+                voulezVousContinuer = Console.ReadLine().ToUpper() == "O";
+            }
+
+            Console.WriteLine("HexaPawn : Jeu Terminé");
+
         }
     }
 }

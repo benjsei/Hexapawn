@@ -3,10 +3,10 @@
 	Je veux sélectionner mon déplacement de manière manuelle
 	Afin de faire avancer mes pions
 
-#Rule: Régle 1 - Le premier deplacement est choisi manuellement dans une liste de déplacement.
+#Rule: Règle 1 - Le premier déplacement est choisi manuellement dans une liste de déplacement.
 @JoueurHumain
-Scenario: Deplacement choisi parmi 3 deplacements 
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 3 déplacements 
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -17,8 +17,8 @@ Scenario: Deplacement choisi parmi 3 deplacements
     | 2:0       | 1:0   |
 
 @JoueurHumain
-Scenario: Deplacement choisi parmi 1 deplacement
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 1 déplacement
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
 	When Je choisie un déplacement 0
@@ -27,8 +27,8 @@ Scenario: Deplacement choisi parmi 1 deplacement
     | 2:0       | 1:0   |
 
 @JoueurHumain
-Scenario: Deplacement choisi n'est pas dans les choix possibles
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi n'est pas dans les choix possibles
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -39,8 +39,8 @@ Scenario: Deplacement choisi n'est pas dans les choix possibles
     | 2:0       | 1:0   |
 
 @JoueurHumain
-Scenario: Deplacement choisi parmi 0 deplacement
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 0 déplacement
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
 	When Je choisie un déplacement 1
 	Then le déplacement choisi est vide

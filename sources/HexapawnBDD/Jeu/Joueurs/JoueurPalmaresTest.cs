@@ -33,8 +33,8 @@ namespace HexapawnBDD.Jeu.Joueurs
             }
         }
 
-        [When(@"J'affiche mon palamès")]
-        public void WhenJafficheMonPalames()
+        [When(@"J'affiche mon palmarès")]
+        public void WhenJafficheMonPalmares()
         {
 
         }

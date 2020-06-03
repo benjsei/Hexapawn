@@ -32,7 +32,7 @@ namespace HexapawnBDD.Jeu.Regles.DeplacementsPossibles
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Lister les déplacements autorisés", "En tant que Joueur\nJe veux connaitre les coups autorisés\nAfin de pouvoir bouger m" +
-                    "on pion dans les régles", ProgrammingLanguage.CSharp, ((string[])(null)));
+                    "on pion dans les règles", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         

@@ -3,10 +3,10 @@
 	Je veux sélectionner mon déplacement aléatoirement
 	Afin de faire avancer mes pions
 
-#Rule: Régle 1 - Le deplacement est choisi de maniere aléatoire dans une liste de déplacement.
+#Rule: Règle 1 - Le déplacement est choisi de manière aléatoire dans une liste de déplacement.
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmi 3 deplacements 
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 3 déplacements 
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -18,8 +18,8 @@ Scenario: Deplacement choisi parmi 3 deplacements
     | 2:1       | 1:1   |
 
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmi 4 deplacements 
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 4 déplacements 
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -32,8 +32,8 @@ Scenario: Deplacement choisi parmi 4 deplacements
     | 2:2       | 1:2   |
 
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmi 1 deplacements 
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 1 déplacements 
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
 	And l'index tiré aléatoirement est 0
@@ -42,10 +42,10 @@ Scenario: Deplacement choisi parmi 1 deplacements
 	| depart    | fin   |
     | 2:0       | 1:0   |
 
-#Rule: Régle 2 - En cas d'erreur Le deplacement, choisi dans une liste de déplacement, est le premier de la liste.
+#Rule: Règle 2 - En cas d'erreur le déplacement, choisi dans une liste de déplacement, est le premier de la liste.
 @JoueurAleatoireTest
 Scenario: Index tiré trop grand
-	Given J'ai ces deplacements disponibles
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -56,10 +56,10 @@ Scenario: Index tiré trop grand
 	| depart    | fin   |
     | 2:0       | 1:0   |
 
-#Rule: Régle 3 - Le deplacement choisi retourné pour une liste de déplacement sans élement est vide.
+#Rule: Règle 3 - Le déplacement choisi retourné pour une liste de déplacement sans élément est vide.
 @JoueurAleatoireTest
-Scenario: Deplacement choisi parmi 0 deplacement
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 0 déplacement
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
 	And l'index tiré aléatoirement est 10
 	When Je choisie un déplacement 

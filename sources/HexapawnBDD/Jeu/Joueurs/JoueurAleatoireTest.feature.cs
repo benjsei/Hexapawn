@@ -71,11 +71,11 @@ namespace HexapawnBDD.Jeu.Joueurs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 3 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 3 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
         public virtual void DeplacementChoisiParmi3Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 3 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 3 déplacements", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -94,7 +94,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 9
- testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table1, "Given ");
+ testRunner.Given("J\'ai ces déplacements disponibles", ((string)(null)), table1, "Given ");
 #line 14
  testRunner.And("l\'index tiré aléatoirement est 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 15
@@ -113,11 +113,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 4 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 4 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
         public virtual void DeplacementChoisiParmi4Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 4 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 4 déplacements", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 21
 this.ScenarioInitialize(scenarioInfo);
@@ -139,7 +139,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "0:0",
                         "1:1"});
 #line 22
- testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table3, "Given ");
+ testRunner.Given("J\'ai ces déplacements disponibles", ((string)(null)), table3, "Given ");
 #line 28
  testRunner.And("l\'index tiré aléatoirement est 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 29
@@ -158,11 +158,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 1 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 1 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
         public virtual void DeplacementChoisiParmi1Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 1 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 1 déplacements", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 35
 this.ScenarioInitialize(scenarioInfo);
@@ -175,7 +175,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:0",
                         "1:0"});
 #line 36
- testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table5, "Given ");
+ testRunner.Given("J\'ai ces déplacements disponibles", ((string)(null)), table5, "Given ");
 #line 39
  testRunner.And("l\'index tiré aléatoirement est 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 40
@@ -217,7 +217,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 48
- testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table7, "Given ");
+ testRunner.Given("J\'ai ces déplacements disponibles", ((string)(null)), table7, "Given ");
 #line 53
  testRunner.And("l\'index tiré aléatoirement est 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 54
@@ -236,11 +236,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 0 deplacement")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 0 déplacement")]
         [NUnit.Framework.CategoryAttribute("JoueurAleatoireTest")]
         public virtual void DeplacementChoisiParmi0Deplacement()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 0 deplacement", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 0 déplacement", null, new string[] {
                         "JoueurAleatoireTest"});
 #line 61
 this.ScenarioInitialize(scenarioInfo);
@@ -250,7 +250,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "depart",
                         "fin"});
 #line 62
- testRunner.Given("J\'ai ces deplacements disponibles", ((string)(null)), table9, "Given ");
+ testRunner.Given("J\'ai ces déplacements disponibles", ((string)(null)), table9, "Given ");
 #line 64
  testRunner.And("l\'index tiré aléatoirement est 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 65

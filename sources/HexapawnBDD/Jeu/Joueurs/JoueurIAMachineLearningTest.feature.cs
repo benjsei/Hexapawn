@@ -71,11 +71,11 @@ namespace HexapawnBDD.Jeu.Joueurs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 3 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 3 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void DeplacementChoisiParmi3Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 3 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 3 déplacements", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 8
 this.ScenarioInitialize(scenarioInfo);
@@ -96,7 +96,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 10
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table1, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table1, "And ");
 #line 15
  testRunner.And("l\'index tiré aléatoirement est 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 16
@@ -115,11 +115,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 4 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 4 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void DeplacementChoisiParmi4Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 4 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 4 déplacements", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 22
 this.ScenarioInitialize(scenarioInfo);
@@ -143,7 +143,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "0:0",
                         "1:2"});
 #line 24
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table3, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table3, "And ");
 #line 30
  testRunner.And("l\'index tiré aléatoirement est 2", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 31
@@ -162,11 +162,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 1 deplacements")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 1 déplacements")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void DeplacementChoisiParmi1Deplacements()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 1 deplacements", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 1 déplacements", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 37
 this.ScenarioInitialize(scenarioInfo);
@@ -181,7 +181,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:0",
                         "1:0"});
 #line 39
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table5, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table5, "And ");
 #line 42
  testRunner.And("l\'index tiré aléatoirement est 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 43
@@ -225,7 +225,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 52
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table7, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table7, "And ");
 #line 57
  testRunner.And("l\'index tiré aléatoirement est 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 58
@@ -244,11 +244,11 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Deplacement choisi parmi 0 deplacement")]
+        [NUnit.Framework.DescriptionAttribute("Déplacement choisi parmi 0 déplacement")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void DeplacementChoisiParmi0Deplacement()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Deplacement choisi parmi 0 deplacement", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Déplacement choisi parmi 0 déplacement", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 65
 this.ScenarioInitialize(scenarioInfo);
@@ -260,7 +260,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "depart",
                         "fin"});
 #line 67
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table9, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table9, "And ");
 #line 69
  testRunner.And("l\'index tiré aléatoirement est 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 70
@@ -272,12 +272,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 deplacements choisis parmi 3 deplacements pour la même situation après une défa" +
+        [NUnit.Framework.DescriptionAttribute("2 déplacements choisis parmi 3 déplacements pour la même situation après une défa" +
             "ite.")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void _2DeplacementsChoisisParmi3DeplacementsPourLaMemeSituationApresUneDefaite_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 deplacements choisis parmi 3 deplacements pour la même situation après une défa" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 déplacements choisis parmi 3 déplacements pour la même situation après une défa" +
                     "ite.", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 75
@@ -299,7 +299,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 77
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table10, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table10, "And ");
 #line 82
  testRunner.And("l\'index tiré aléatoirement est 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 83
@@ -333,12 +333,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 deplacements choisis parmi 3 deplacements pour la même situation après une vict" +
+        [NUnit.Framework.DescriptionAttribute("2 déplacements choisis parmi 3 déplacements pour la même situation après une vict" +
             "oire.")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void _2DeplacementsChoisisParmi3DeplacementsPourLaMemeSituationApresUneVictoire_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 deplacements choisis parmi 3 deplacements pour la même situation après une vict" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 déplacements choisis parmi 3 déplacements pour la même situation après une vict" +
                     "oire.", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 96
@@ -360,7 +360,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 98
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table13, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table13, "And ");
 #line 103
  testRunner.And("l\'index tiré aléatoirement est 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 104
@@ -394,12 +394,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 deplacements choisis parmi 1 deplacement pour la même situation après une défai" +
+        [NUnit.Framework.DescriptionAttribute("2 déplacements choisis parmi 1 déplacement pour la même situation après une défai" +
             "te.")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void _2DeplacementsChoisisParmi1DeplacementPourLaMemeSituationApresUneDefaite_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 deplacements choisis parmi 1 deplacement pour la même situation après une défai" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 déplacements choisis parmi 1 déplacement pour la même situation après une défai" +
                     "te.", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 117
@@ -415,7 +415,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:0",
                         "1:0"});
 #line 119
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table16, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table16, "And ");
 #line 122
  testRunner.And("l\'index tiré aléatoirement est 0", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 123
@@ -449,12 +449,12 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("2 deplacements choisis parmi 3 deplacements pour une situation différente après u" +
+        [NUnit.Framework.DescriptionAttribute("2 déplacements choisis parmi 3 déplacements pour une situation différente après u" +
             "ne défaite.")]
         [NUnit.Framework.CategoryAttribute("JoueurIAMachineLearningTest")]
         public virtual void _2DeplacementsChoisisParmi3DeplacementsPourUneSituationDifferenteApresUneDefaite_()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 deplacements choisis parmi 3 deplacements pour une situation différente après u" +
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("2 déplacements choisis parmi 3 déplacements pour une situation différente après u" +
                     "ne défaite.", null, new string[] {
                         "JoueurIAMachineLearningTest"});
 #line 136
@@ -476,7 +476,7 @@ this.ScenarioInitialize(scenarioInfo);
                         "2:2",
                         "1:2"});
 #line 138
- testRunner.And("J\'ai ces deplacements disponibles", ((string)(null)), table19, "And ");
+ testRunner.And("J\'ai ces déplacements disponibles", ((string)(null)), table19, "And ");
 #line 143
  testRunner.And("l\'index tiré aléatoirement est 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 144

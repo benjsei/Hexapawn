@@ -3,9 +3,10 @@
 	Je veux choisir le premier déplacement parmi les déplacements possibles
 	Afin de faire avancer mes pions
 
+#Rule : Règle 1 - Le joueur peut choisir toujours le premier déplacement parmi ceux proposés.
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmi 3 deplacements 
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 3 déplacements 
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -16,8 +17,8 @@ Scenario: Deplacement choisi parmi 3 deplacements
     | 2:0       | 1:0   |
 
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmi 1 deplacement
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 1 déplacement
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
 	When Je choisie un déplacement 
@@ -26,8 +27,8 @@ Scenario: Deplacement choisi parmi 1 deplacement
     | 2:0       | 1:0   |
 
 @JoueurDeplacementTest
-Scenario: Deplacement choisi parmi 0 deplacement
-	Given J'ai ces deplacements disponibles
+Scenario: Déplacement choisi parmi 0 déplacement
+	Given J'ai ces déplacements disponibles
 	| depart    | fin   |
 	When Je choisie un déplacement 
 	Then le déplacement choisi est vide

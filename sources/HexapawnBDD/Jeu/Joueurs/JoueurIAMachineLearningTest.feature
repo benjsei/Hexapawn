@@ -3,11 +3,11 @@
 	Je veux sélectionner mon déplacement de manière optimisée
 	Afin de faire avancer mes pions
 
-#Rule: Régle 1 - Le premier deplacement est choisi de maniere aléatoire dans une liste de déplacement.
+#Rule: Règle 1 - Le premier déplacement est choisi de manière aléatoire dans une liste de déplacement.
 @JoueurIAMachineLearningTest
-Scenario: Deplacement choisi parmi 3 deplacements 
+Scenario: Déplacement choisi parmi 3 déplacements 
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -19,9 +19,9 @@ Scenario: Deplacement choisi parmi 3 deplacements
     | 2:1       | 1:1   |
 
 @JoueurIAMachineLearningTest
-Scenario: Deplacement choisi parmi 4 deplacements 
+Scenario: Déplacement choisi parmi 4 déplacements 
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -34,9 +34,9 @@ Scenario: Deplacement choisi parmi 4 deplacements
     | 2:2       | 1:2   |
 
 @JoueurIAMachineLearningTest
-Scenario: Deplacement choisi parmi 1 deplacements 
+Scenario: Déplacement choisi parmi 1 déplacements 
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
 	And l'index tiré aléatoirement est 0
@@ -45,11 +45,11 @@ Scenario: Deplacement choisi parmi 1 deplacements
 	| depart    | fin   |
     | 2:0       | 1:0   |
 
-#Rule: Régle 2 - En cas d'erreur Le deplacement, choisi dans une liste de déplacement, est le premier de la liste.
+#Rule: Règle 2 - En cas d'erreur le déplacement, choisi dans une liste de déplacement, est le premier de la liste.
 @JoueurIAMachineLearningTest
 Scenario: Index tiré trop grand
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -60,21 +60,21 @@ Scenario: Index tiré trop grand
 	| depart    | fin   |
     | 2:0       | 1:0   |
 
-#Rule: Régle 3 - Le deplacement choisi retourné pour une liste de déplacement sans élement est vide.
+#Rule: Règle 3 - Le déplacement choisi retourné pour une liste de déplacement sans élément est vide.
 @JoueurIAMachineLearningTest
-Scenario: Deplacement choisi parmi 0 deplacement
+Scenario: Déplacement choisi parmi 0 déplacement
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
 	And l'index tiré aléatoirement est 10
 	When Je choisie un déplacement 
 	Then le déplacement choisi est vide
 
-#Rule: Régle 4 - le dernier choix est supprimé en cas de défaite.
+#Rule: Règle 4 - le dernier choix est supprimé en cas de défaite.
 @JoueurIAMachineLearningTest
-Scenario: 2 deplacements choisis parmi 3 deplacements pour la même situation après une défaite.
+Scenario: 2 déplacements choisis parmi 3 déplacements pour la même situation après une défaite.
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -91,11 +91,11 @@ Scenario: 2 deplacements choisis parmi 3 deplacements pour la même situation ap
 	| depart    | fin   |
     | 2:2       | 1:2   |
 
-#Rule: Régle 5 - le dernier choix n'est pas supprimé en cas de victoire.
+#Rule: Règle 5 - le dernier choix n'est pas supprimé en cas de victoire.
 @JoueurIAMachineLearningTest
-Scenario: 2 deplacements choisis parmi 3 deplacements pour la même situation après une victoire.
+Scenario: 2 déplacements choisis parmi 3 déplacements pour la même situation après une victoire.
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |
@@ -112,11 +112,11 @@ Scenario: 2 deplacements choisis parmi 3 deplacements pour la même situation ap
 	| depart    | fin   |
     | 2:1       | 1:1   |
 
-#Rule: Régle 6 - Le dernier choix n'est pas supprimé en cas de défaite si il n'y a pas d'autres altérnatives.
+#Rule: Règle 6 - Le dernier choix n'est pas supprimé en cas de défaite si il n'y a pas d'autres alternatives.
 @JoueurIAMachineLearningTest
-Scenario: 2 deplacements choisis parmi 1 deplacement pour la même situation après une défaite.
+Scenario: 2 déplacements choisis parmi 1 déplacement pour la même situation après une défaite.
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
 	And l'index tiré aléatoirement est 0
@@ -131,11 +131,11 @@ Scenario: 2 deplacements choisis parmi 1 deplacement pour la même situation apr
 	| depart    | fin   |
     | 2:0       | 1:0   |
 
-#Rule: Régle 7 - le dernier choix est supprimé que pour une situation.
+#Rule: Règle 7 - le dernier choix est supprimé que pour une situation.
 @JoueurIAMachineLearningTest
-Scenario: 2 deplacements choisis parmi 3 deplacements pour une situation différente après une défaite.
+Scenario: 2 déplacements choisis parmi 3 déplacements pour une situation différente après une défaite.
 	Given Je vois ce plateau VVV___RRR
-	And J'ai ces deplacements disponibles
+	And J'ai ces déplacements disponibles
 	| depart    | fin   |
     | 2:0       | 1:0   |
     | 2:1       | 1:1   |

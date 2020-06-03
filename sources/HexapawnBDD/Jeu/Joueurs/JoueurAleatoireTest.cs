@@ -13,7 +13,7 @@ namespace HexapawnBDD.Jeu.Joueurs
         private Deplacement[] deplacementsPossibles;
         private Deplacement deplacementChoisi;
 
-        [Given(@"J'ai ces deplacements disponibles"), Scope(Tag = "JoueurAleatoireTest")]
+        [Given(@"J'ai ces déplacements disponibles"), Scope(Tag = "JoueurAleatoireTest")]
         public void GivenJaiCesDeplacementsDisponibles(Table table)
         {
             var deplacementStrings = table.CreateSet<DeplacementString>();

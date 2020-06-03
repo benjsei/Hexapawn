@@ -1,7 +1,7 @@
 ﻿Feature: Lister les déplacements autorisés
 En tant que Joueur
 Je veux connaitre les coups autorisés
-Afin de pouvoir bouger mon pion dans les régles
+Afin de pouvoir bouger mon pion dans les règles
 
 #Rule: Règle 1 - Les pions peuvent avancer d'une case si la case est vide.
 @DeplacementsPossiblesTest
