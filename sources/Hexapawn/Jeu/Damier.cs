@@ -41,15 +41,13 @@ namespace Hexapawn
 
         internal void BougerPion(string pion, Deplacement deplacement)
         {
-            if ((cases[deplacement.Depart.Ligne, deplacement.Depart.Colonne] == pion) &&
-                    (cases[deplacement.Fin.Ligne, deplacement.Fin.Colonne] != pion))
+            if (CaseContientPion(pion, deplacement.Depart) &&
+                    CaseNeContientPasPion(pion, deplacement.Fin))
             {
-
-                cases[deplacement.Depart.Ligne, deplacement.Depart.Colonne] = caseVide;
-                cases[deplacement.Fin.Ligne, deplacement.Fin.Colonne] = pion;
+                ViderCase(deplacement.Depart);
+                AffecterCasePion(pion, deplacement.Fin);
             }
         }
-
 
         internal Deplacement[] DeplacementsPossibles(Joueur joueur)
         {
@@ -101,16 +99,46 @@ namespace Hexapawn
             }
         }
 
+        private bool CaseContientPion(string pion, Position position)
+        {
+            return cases[position.Ligne, position.Colonne] == pion;
+        }
+
+        private bool CaseNeContientPasPion(string pion, Position position)
+        {
+            return cases[position.Ligne, position.Colonne] != pion;
+        }
+
+        private void AffecterCasePion(string pion, Position position)
+        {
+            cases[position.Ligne, position.Colonne] = pion;
+        }
+
+        private void ViderCase(Position position)
+        {
+            cases[position.Ligne, position.Colonne] = caseVide;
+        }
+
         private bool Trouver(string pion)
         {
             for (int ligne = 0; ligne < NombreLignes; ligne++)
             {
-                for (int colonne = 0; colonne < NombreColonnes; colonne++)
+                if (TrouverColonne(pion, ligne))
                 {
-                    if (cases[ligne, colonne] == pion)
-                    {
-                        return true;
-                    }
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool TrouverColonne(string pion, int ligne)
+        {
+            for (int colonne = 0; colonne < NombreColonnes; colonne++)
+            {
+                if (cases[ligne, colonne] == pion)
+                {
+                    return true;
                 }
             }
 
