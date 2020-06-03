@@ -32,13 +32,8 @@ namespace Hexapawn
 
             return false;
         }
-
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
-        override public string ToString()
+        
+        public override string ToString()
         {
             return Ligne.ToString() + separateur + Colonne.ToString();
         }
