@@ -4,19 +4,19 @@ namespace Hexapawn.Jeu.Joueurs.IA
 {
     public class Choix
     {
-        private readonly string Plateau;
+        private readonly string plateau;
 
         public readonly Deplacement Deplacement;
 
-        public Choix(string Plateau, Deplacement Deplacement)
+        public Choix(string plateau, Deplacement deplacement)
         {
-            this.Plateau = Plateau;
-            this.Deplacement = Deplacement;
+            this.plateau = plateau;
+            this.Deplacement = deplacement;
         }
 
         public bool EstMemePlateau(string AutrePlateau)
         {
-            return AutrePlateau == Plateau;
+            return AutrePlateau == plateau;
         }
     }
 
