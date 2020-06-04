@@ -1,5 +1,7 @@
 ﻿using System;
-namespace Hexapawn
+using Hexapawn.Jeu.Plateau;
+
+namespace Hexapawn.Jeu.Joueurs
 {
     public class Joueur
     {
@@ -18,20 +20,14 @@ namespace Hexapawn
             this.pion = pion;
         }
 
-        public int IncrementDeplacement
+        public Position AvancerPosition(Position depart)
         {
-            get
-            {
-                if (sensDeJeu == SensDeJeu.BasVersHaut)
-                {
-                    return incrementDeDeplacement.Inverser();
-                }
+            int nouvelleLigne = depart.Ligne + IncrementDeplacement;
 
-                return incrementDeDeplacement;
-            }
+            return new Position(nouvelleLigne, depart.Colonne);
         }
 
-        public virtual Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public virtual Deplacement ChoisirDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             return (Deplacement)deplacementsPossibles.PremierSinonVide();
         }
@@ -54,6 +50,19 @@ namespace Hexapawn
                     victoire,
                     partie,
                     PourcentageVictoire);
+            }
+        }
+
+        private int IncrementDeplacement
+        {
+            get
+            {
+                if (sensDeJeu == SensDeJeu.BasVersHaut)
+                {
+                    return incrementDeDeplacement.Inverser();
+                }
+
+                return incrementDeDeplacement;
             }
         }
 

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Hexapawn
+namespace Hexapawn.Jeu
 {
     public class Aleatoire : IAleatoire
     {

@@ -1,4 +1,7 @@
-﻿namespace Hexapawn
+﻿using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Plateau.Regles;
+
+namespace Hexapawn.Jeu.Plateau
 {
     public class Plateau : IPlateau
     {
@@ -6,21 +9,11 @@
 
         private readonly Joueur joueurHaut;
         private readonly Joueur joueurBas;
+        private readonly Damier damier = new Damier(taille);
+        private readonly ReglesDeplacement reglesDeplacement;
+        private readonly ReglesVictoire reglesVictoire;
 
         public Joueur JoueurActif;
-        private Joueur ProchainJoueur
-        {
-            get
-            {
-                if (JoueurActif == joueurHaut) {
-                    return joueurBas;
-                }
-
-                return joueurHaut;
-            }
-        }
-
-        private readonly Damier Damier = new Damier(taille);
 
         public Plateau(Joueur joueurHaut, Joueur joueurBas)
         {
@@ -30,6 +23,9 @@
             joueurBas.sensDeJeu = SensDeJeu.BasVersHaut;
             this.joueurBas = joueurBas;
 
+            reglesDeplacement = new ReglesDeplacement(damier);
+            reglesVictoire = new ReglesVictoire(reglesDeplacement, damier);
+
             MettreEnPlace();
         }
 
@@ -38,7 +34,7 @@
             JoueurActif = face ? joueurBas : joueurHaut;
         }
 
-      
+
         public virtual void AuJoueurSuivant()
         {
             JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
@@ -46,28 +42,28 @@
 
         public void Jouer()
         {
-            Deplacement deplacement = JoueurActif.ChoisirDeplacement(this, Damier.DeplacementsPossibles(JoueurActif));
-            Damier.BougerPion(JoueurActif.pion, deplacement);
+            Deplacement deplacement = JoueurActif.ChoisirDeplacement(this, reglesDeplacement.DeplacementsPossibles(JoueurActif));
+            damier.BougerPion(JoueurActif.pion, deplacement);
         }
 
         public string Afficher()
         {
-            return Damier.Afficher();
+            return damier.Afficher();
         }
 
         public void Restaurer(string damier)
         {
-            Damier.Restaurer(damier);
+            this.damier.Restaurer(damier);
         }
 
         public void BougerPion(Joueur joueur, Deplacement deplacement)
         {
-            Damier.BougerPion(joueur.pion, deplacement);
+            damier.BougerPion(joueur.pion, deplacement);
         }
 
         public Deplacement[] DeplacementsPossibles(Joueur joueur)
         {
-            return Damier.DeplacementsPossibles(joueur);
+            return reglesDeplacement.DeplacementsPossibles(joueur);
         }
 
         public virtual bool EstPasTerminee {
@@ -81,17 +77,17 @@
         {
             get
             {
-                if (Damier.EstDetruit(ProchainJoueur))
+                if (reglesVictoire.EstDetruit(ProchainJoueur))
                 {
                     return JoueurActif;
                 }
 
-                if (Damier.AConquis(JoueurActif))
+                if (reglesVictoire.AConquis(JoueurActif))
                 {
                     return JoueurActif;
                 }
 
-                if (Damier.EstBloque(ProchainJoueur))
+                if (reglesVictoire.EstBloque(ProchainJoueur))
                 {
                     return JoueurActif;
                 }
@@ -107,11 +103,24 @@
             joueurHaut.Apprendre(!joueurBasGagnant);
         }
 
+        private Joueur ProchainJoueur
+        {
+            get
+            {
+                if (JoueurActif == joueurHaut)
+                {
+                    return joueurBas;
+                }
+
+                return joueurHaut;
+            }
+        }
+
         private void MettreEnPlace()
         {
-            Damier.Vider();
-            Damier.MettreEnPlace(joueurHaut);
-            Damier.MettreEnPlace(joueurBas);
+            damier.Vider();
+            damier.MettreEnPlace(joueurHaut);
+            damier.MettreEnPlace(joueurBas);
         }   
     }    
 }

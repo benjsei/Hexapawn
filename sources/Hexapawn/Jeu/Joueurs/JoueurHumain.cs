@@ -1,4 +1,7 @@
-﻿namespace Hexapawn
+﻿using Hexapawn.Jeu.Joueurs.Humain;
+using Hexapawn.Jeu.Plateau;
+
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurHumain : Joueur
     {
@@ -11,7 +14,7 @@
         }
 
 
-        override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public override Deplacement ChoisirDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             int saisie = joueurHumainInterface.DemanderDeplacement(plateau, deplacementsPossibles);
             if (saisie < deplacementsPossibles.Length)

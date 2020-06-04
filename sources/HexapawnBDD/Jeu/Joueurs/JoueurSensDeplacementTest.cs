@@ -1,5 +1,5 @@
-﻿using System;
-using Hexapawn;
+﻿using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Plateau;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 
@@ -11,6 +11,8 @@ namespace HexapawnBDD.Jeu.Joueurs
         private Joueur joueur;
         private const int IncrementVersLeHaut = -1;
         private const int IncrementVersLeBas = 1;
+        private Position depart = new Position(0, 0);
+        private Position nouvellePosition;
 
         [Given(@"Je suis un joueur en bas du plateau")]
         public void GivenJeSuisUnJoueurEnBasDuPlateau()
@@ -33,19 +35,19 @@ namespace HexapawnBDD.Jeu.Joueurs
         [When(@"J'avance mon pion")]
         public void WhenJavanceMonPion()
         {
-            
+            nouvellePosition = joueur.AvancerPosition(depart);
         }
 
         [Then(@"mon pion se déplace vers le haut")]
         public void ThenMonPionSeDeplaceVersLeHaut()
         {
-            Assert.AreEqual(joueur.IncrementDeplacement, IncrementVersLeHaut);
+            Assert.AreEqual(nouvellePosition.Ligne, IncrementVersLeHaut);
         }
 
         [Then(@"mon pion se déplace vers le bas")]
         public void ThenMonPionSeDeplaceVersLeBas()
         {
-            Assert.AreEqual(joueur.IncrementDeplacement, IncrementVersLeBas);
+            Assert.AreEqual(nouvellePosition.Ligne, IncrementVersLeBas);
         }
     }
 }

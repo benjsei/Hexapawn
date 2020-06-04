@@ -1,6 +1,7 @@
 ﻿using System;
+using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurAleatoire : Joueur
     {
@@ -11,7 +12,7 @@ namespace Hexapawn
             this.aleatoire = aleatoire;
         }
 
-        public override Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public override Deplacement ChoisirDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             int indexAleatoire = aleatoire.ChiffreAleatoire(deplacementsPossibles.Length);
             if (indexAleatoire < deplacementsPossibles.Length)

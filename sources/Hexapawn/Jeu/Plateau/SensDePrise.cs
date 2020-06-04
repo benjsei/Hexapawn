@@ -1,4 +1,4 @@
-﻿namespace Hexapawn
+﻿namespace Hexapawn.Jeu.Plateau
 {
     public enum SensDePrise : int
     {

@@ -1,4 +1,6 @@
-﻿namespace Hexapawn
+﻿using Hexapawn.Jeu.Plateau;
+
+namespace Hexapawn.Jeu.Joueurs.IA
 {
     public class Choix
     {

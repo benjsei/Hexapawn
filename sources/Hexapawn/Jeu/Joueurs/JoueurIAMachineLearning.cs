@@ -1,6 +1,8 @@
 ﻿using System;
+using Hexapawn.Jeu.Joueurs.IA;
+using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurIAMachineLearning : Joueur
     {
@@ -12,12 +14,12 @@ namespace Hexapawn
             this.aleatoire = aleatoire;
         }
 
-        override public Deplacement ChoisirDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public override Deplacement ChoisirDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             return alternatives.ChoisirDeplacement(plateau.Afficher(), deplacementsPossibles, aleatoire);
         }
 
-        override public void Apprendre(bool estVictoire)
+        public override void Apprendre(bool estVictoire)
         {
             if (!estVictoire)
             {

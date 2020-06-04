@@ -1,5 +1,4 @@
-﻿using System;
-namespace Hexapawn
+﻿namespace Hexapawn.Jeu.Plateau
 {
     public class Deplacement
     {
@@ -20,7 +19,7 @@ namespace Hexapawn
             this.Fin = new Position(CoordoneesFin);
         }
 
-        override public string ToString()
+        public override string ToString()
         {
             return Depart + separateur + Fin;
         }

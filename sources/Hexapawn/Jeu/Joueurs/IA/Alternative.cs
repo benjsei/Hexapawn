@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn
+namespace Hexapawn.Jeu.Joueurs.IA
 {
     public class Alternative
     {

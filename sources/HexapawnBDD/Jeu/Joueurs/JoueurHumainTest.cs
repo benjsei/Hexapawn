@@ -1,5 +1,6 @@
 ﻿using System.Linq;
-using Hexapawn;
+using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Plateau;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;

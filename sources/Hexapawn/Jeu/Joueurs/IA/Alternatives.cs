@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn
+namespace Hexapawn.Jeu.Joueurs.IA
 {
     public class Alternatives : List<Alternative>
     {
@@ -32,7 +33,7 @@ namespace Hexapawn
             }
         }
 
-        private Deplacement EnregistrerEtChoisirAleatoirementDeplacement(string plateau, Deplacement[] deplacementsPossibles, IAleatoire aleatoire)
+        public Deplacement EnregistrerEtChoisirAleatoirementDeplacement(string plateau, Deplacement[] deplacementsPossibles, IAleatoire aleatoire)
         {
             Alternative alternative = new Alternative(plateau, deplacementsPossibles, aleatoire);
             this.Add(alternative);

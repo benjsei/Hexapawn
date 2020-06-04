@@ -1,4 +1,6 @@
-﻿namespace Hexapawn
+﻿using Hexapawn.Jeu.Joueurs;
+
+namespace Hexapawn.Jeu.Plateau
 {
     public interface IPlateau
     {
@@ -8,5 +10,6 @@
         void AuJoueurSuivant();
         void Jouer();
         void Enseigner();
+        string Afficher();
     }
 }

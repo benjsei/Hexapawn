@@ -1,5 +1,7 @@
 ﻿using System;
-namespace Hexapawn
+using Hexapawn.Jeu.Joueurs;
+
+namespace Hexapawn.Jeu.Partie
 {
     public interface IPartieInterface
     {

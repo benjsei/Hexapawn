@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using Hexapawn;
-using NUnit.Framework;
-using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist;
+﻿using TechTalk.SpecFlow;
 using Moq;
+using Hexapawn.Jeu;
+using Hexapawn.Jeu.Partie;
+using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Plateau;
 
 namespace HexapawnBDD
 {

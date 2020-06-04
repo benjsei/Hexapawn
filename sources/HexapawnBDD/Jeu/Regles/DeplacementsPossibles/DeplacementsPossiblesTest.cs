@@ -1,5 +1,8 @@
 ﻿using System.Linq;
 using Hexapawn;
+using Hexapawn.Jeu;
+using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Plateau;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 using TechTalk.SpecFlow.Assist;
@@ -12,7 +15,6 @@ namespace HexapawnBDD
         private Plateau plateau;
         private Joueur joueurHaut;
         private Joueur joueurBas;
-        private readonly Aleatoire aleatoire = new Aleatoire();
 
         [Given(@"Le joueur du haut est (.*), et il joue les pions (.*)"), Scope(Tag = "DeplacementsPossiblesTest")]
         public void GivenLeJoueurDuHautEstThomasEtIlJoueLesPionsR(string nom, string pion)

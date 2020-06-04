@@ -1,10 +1,12 @@
 ﻿using System;
+using Hexapawn.Jeu.Joueurs.Humain;
+using Hexapawn.Jeu.Plateau;
 
 namespace Hexapawn
 {
     public class JoueurHumainInterface : IJoueurHumainInterface
     {
-        public int DemanderDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public int DemanderDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             string lisible = plateau.Afficher();
             lisible = lisible.Insert(6, "\n");

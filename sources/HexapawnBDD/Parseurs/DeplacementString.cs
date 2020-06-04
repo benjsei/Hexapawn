@@ -1,5 +1,5 @@
 ﻿using System;
-using Hexapawn;
+using Hexapawn.Jeu.Plateau;
 
 namespace HexapawnBDD
 {

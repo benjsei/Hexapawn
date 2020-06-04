@@ -1,5 +1,4 @@
-﻿using System;
-using Hexapawn;
+﻿using Hexapawn.Jeu.Joueurs;
 using NUnit.Framework;
 using TechTalk.SpecFlow;
 

@@ -1,5 +1,5 @@
-﻿using System;
-using Hexapawn;
+﻿using Hexapawn.Jeu.Joueurs.Humain;
+using Hexapawn.Jeu.Plateau;
 
 namespace HexapawnBDD
 {
@@ -10,7 +10,7 @@ namespace HexapawnBDD
         }
 
         public static int DemanderDeplacementRetour;
-        public int DemanderDeplacement(Plateau plateau, Deplacement[] deplacementsPossibles)
+        public int DemanderDeplacement(IPlateau plateau, Deplacement[] deplacementsPossibles)
         {
             return DemanderDeplacementRetour;
         }

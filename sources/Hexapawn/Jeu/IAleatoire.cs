@@ -1,4 +1,4 @@
-﻿namespace Hexapawn
+﻿namespace Hexapawn.Jeu
 {
     public interface IAleatoire
     {

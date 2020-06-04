@@ -1,6 +1,7 @@
 ﻿using System;
+using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn
+namespace Hexapawn.Jeu.Partie
 {
     public class Partie
     {
