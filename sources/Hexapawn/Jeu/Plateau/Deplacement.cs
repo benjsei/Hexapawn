@@ -7,16 +7,16 @@
         public Position Depart { get; set; }
         public Position Fin { get; set; }
 
-        public Deplacement(Position Depart, Position Fin)
+        public Deplacement(Position depart, Position fin)
         {
-            this.Depart = Depart;
-            this.Fin = Fin;
+            this.Depart = depart;
+            this.Fin = fin;
         }
 
-        public Deplacement(string CoordoneesDepart, string CoordoneesFin)
+        public Deplacement(string coordoneesDepart, string coordoneesFin)
         {
-            this.Depart = new Position(CoordoneesDepart);
-            this.Fin = new Position(CoordoneesFin);
+            this.Depart = new Position(coordoneesDepart);
+            this.Fin = new Position(coordoneesFin);
         }
 
         public override string ToString()

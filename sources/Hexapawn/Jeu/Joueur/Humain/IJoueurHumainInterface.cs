@@ -1,6 +1,6 @@
 ﻿using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn.Jeu.Joueur.Humain
+namespace Hexapawn.Jeu.Joueurs.Humain
 {
     public interface IJoueurHumainInterface
     {

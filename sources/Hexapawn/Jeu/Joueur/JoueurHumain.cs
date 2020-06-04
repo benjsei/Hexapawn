@@ -1,7 +1,7 @@
-﻿using Hexapawn.Jeu.Joueur.Humain;
+﻿using Hexapawn.Jeu.Joueurs.Humain;
 using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn.Jeu.Joueur
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurHumain : Joueur
     {

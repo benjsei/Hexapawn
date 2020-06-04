@@ -1,7 +1,7 @@
 ﻿using System;
 using Hexapawn.Jeu;
-using Hexapawn.Jeu.Joueur;
-using Hexapawn.Jeu.Joueur.Humain;
+using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Joueurs.Humain;
 using Hexapawn.Jeu.Partie;
 using Hexapawn.Jeu.Plateau;
 

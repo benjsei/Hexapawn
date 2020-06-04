@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Hexapawn.Jeu.Joueur;
+using Hexapawn.Jeu.Joueurs;
 
 namespace Hexapawn.Jeu.Plateau
 {
@@ -50,7 +50,7 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        public void MettreEnPlace(Joueur.Joueur joueur)
+        public void MettreEnPlace(Joueur joueur)
         {
             foreach(Position position in PositionsDeDepart(joueur))
             {
@@ -115,7 +115,7 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        public Position[] PositionsDArrivee(Joueur.Joueur joueur)
+        public Position[] PositionsDArrivee(Joueur joueur)
         {
             int ligne = LigneDArrivee(joueur);
             return PositionsDUneLigne(ligne);
@@ -197,13 +197,13 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        private Position[] PositionsDeDepart(Joueur.Joueur joueur)
+        private Position[] PositionsDeDepart(Joueur joueur)
         {
             int ligne = LigneDeDepart(joueur);
             return PositionsDUneLigne(ligne);
         }
 
-        private int LigneDeDepart(Joueur.Joueur joueur)
+        private int LigneDeDepart(Joueur joueur)
         {
             if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
             {
@@ -223,7 +223,7 @@ namespace Hexapawn.Jeu.Plateau
             return positions.ToArray();
         }
 
-        private int LigneDArrivee(Joueur.Joueur joueur) { 
+        private int LigneDArrivee(Joueur joueur) { 
       
             if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
             {

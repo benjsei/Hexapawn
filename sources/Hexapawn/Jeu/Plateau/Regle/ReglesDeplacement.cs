@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Hexapawn.Jeu.Joueurs;
 
 namespace Hexapawn.Jeu.Plateau.Regle
 {
@@ -11,7 +12,7 @@ namespace Hexapawn.Jeu.Plateau.Regle
             this.damier = damier;
         }
 
-        public Deplacement[] DeplacementsPossibles(Joueur.Joueur joueur)
+        public Deplacement[] DeplacementsPossibles(Joueur joueur)
         {
             var deplacements = new List<Deplacement>();
 
@@ -24,7 +25,7 @@ namespace Hexapawn.Jeu.Plateau.Regle
             return deplacements.ToArray();
         }
 
-        private Deplacement[] DeplacementsPossiblesPosition(Joueur.Joueur joueur, Position position)
+        private Deplacement[] DeplacementsPossiblesPosition(Joueur joueur, Position position)
         {
             var deplacements = new List<Deplacement>();
 
@@ -62,7 +63,7 @@ namespace Hexapawn.Jeu.Plateau.Regle
             return null;
         }
 
-        private Position PendreSiPossible(Joueur.Joueur joueur, Position position, SensDePrise sensDePrise)
+        private Position PendreSiPossible(Joueur joueur, Position position, SensDePrise sensDePrise)
         {
             int nouvelleColonne = position.Colonne + (int)sensDePrise;
             Position nouvellePosition = new Position(position.Ligne, nouvelleColonne);

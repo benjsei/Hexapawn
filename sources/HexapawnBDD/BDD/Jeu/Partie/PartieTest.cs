@@ -2,7 +2,7 @@
 using Moq;
 using Hexapawn.Jeu;
 using Hexapawn.Jeu.Partie;
-using Hexapawn.Jeu.Joueur;
+using Hexapawn.Jeu.Joueurs;
 using Hexapawn.Jeu.Plateau;
 
 namespace HexapawnBDD

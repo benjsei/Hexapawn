@@ -1,10 +1,10 @@
 ﻿using System;
-using Hexapawn.Jeu.Joueur;
+using Hexapawn.Jeu.Joueurs;
 
 namespace Hexapawn.Jeu.Partie
 {
     public interface IPartieInterface
     {
-        void AfficherResultat(Joueur.Joueur gagnant);
+        void AfficherResultat(Joueurs.Joueur gagnant);
     }
 }

@@ -1,4 +1,4 @@
-﻿using Hexapawn.Jeu.Joueur.Humain;
+﻿using Hexapawn.Jeu.Joueurs.Humain;
 using Hexapawn.Jeu.Plateau;
 
 namespace HexapawnBDD

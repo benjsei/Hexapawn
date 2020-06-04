@@ -8,10 +8,10 @@ namespace Hexapawn.Jeu.Plateau
         public int Ligne = 0;
         public int Colonne = 0;
 
-        public Position(int Ligne, int Colonne)
+        public Position(int ligne, int colonne)
         {
-            this.Colonne = Colonne;
-            this.Ligne = Ligne;
+            this.Colonne = colonne;
+            this.Ligne = ligne;
         }
 
         public Position(string coordonnees)

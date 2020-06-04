@@ -1,8 +1,8 @@
 ﻿using System;
-using Hexapawn.Jeu.Joueur.IA;
+using Hexapawn.Jeu.Joueurs.IA;
 using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn.Jeu.Joueur
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurIAMachineLearning : Joueur
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using Hexapawn.Jeu.Plateau;
 
-namespace Hexapawn.Jeu.Joueur
+namespace Hexapawn.Jeu.Joueurs
 {
     public class JoueurAleatoire : Joueur
     {

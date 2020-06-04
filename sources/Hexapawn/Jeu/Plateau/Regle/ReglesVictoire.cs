@@ -11,12 +11,12 @@
             this.damier = damier;
         }
 
-        public bool EstBloque(Joueur.Joueur joueur)
+        public bool EstBloque(Joueurs.Joueur joueur)
         {
             return reglesDeplacement.DeplacementsPossibles(joueur).Length == 0;
         }
 
-        public bool AConquis(Joueur.Joueur joueur)
+        public bool AConquis(Joueurs.Joueur joueur)
         {
             foreach(Position position in damier.PositionsDArrivee(joueur))
             {
@@ -29,7 +29,7 @@
             return false;
         }
 
-        public bool EstDetruit(Joueur.Joueur joueur)
+        public bool EstDetruit(Joueurs.Joueur joueur)
         {
             return !damier.Trouver(joueur.pion);
         }
