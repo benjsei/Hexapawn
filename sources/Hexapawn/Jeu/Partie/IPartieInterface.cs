@@ -5,6 +5,6 @@ namespace Hexapawn.Jeu.Partie
 {
     public interface IPartieInterface
     {
-        void AfficherResultat(Joueurs.Joueur gagnant);
+        void AfficherResultat(Joueur gagnant);
     }
 }

@@ -16,9 +16,5 @@ namespace Hexapawn
             return entier != zeroValue;
         }
 
-        public static int ZeroValue(this int entier)
-        {
-            return zeroValue;
-        }
     }
 }

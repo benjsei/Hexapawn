@@ -3,6 +3,7 @@ using Hexapawn.Jeu.Plateau.Regle;
 
 namespace Hexapawn.Jeu.Plateau
 {
+    //CLEAN CODE : Aucun commentaire, le code doit se documenter. Le choix des noms est primoridal.
     public class Plateau : IPlateau
     {
         //CLEAN CODE : Aucun MAGIC String
@@ -43,6 +44,7 @@ namespace Hexapawn.Jeu.Plateau
         //CLEAN CODE : Idéalement, le nombre d’arguments d’une fonction devrait être égal à zéro (niladique)
         public virtual void PasserAuJoueurSuivant()
         {
+            //CLEAN CODE : Ici on est à la limite de "faire son malin", le If serait plus lisible.
             JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
         }
 
@@ -51,6 +53,7 @@ namespace Hexapawn.Jeu.Plateau
             Deplacement deplacement = JoueurActif.ChoisirDeplacement(this, reglesDeplacement.DeplacementsPossibles(JoueurActif));
             damier.BougerPion(JoueurActif.pion, deplacement);
         }
+
         //CLEAN CODE : Une fonction est toujours un verbe.
         public string Afficher()
         {
@@ -62,7 +65,7 @@ namespace Hexapawn.Jeu.Plateau
             this.damier.Restaurer(damier);
         }
 
-        //CLEAN CODE : Formes diadiques, ca passe, mais on doit déjà se questionner, Est-ce possible de faire autrement ?
+        //CLEAN CODE : Forme diadique, ca passe, mais on doit déjà se questionner, Est-ce possible de faire autrement ?
         public void BougerPion(Joueur joueur, Deplacement deplacement)
         {
             damier.BougerPion(joueur.pion, deplacement);
@@ -82,6 +85,7 @@ namespace Hexapawn.Jeu.Plateau
             return reglesDeplacement.DeplacementsPossibles(joueur);
         }
 
+        // CLEAN CODE : Ici on a mis virtual pour les tests, en attendant une meilleure solution.
         public virtual bool EstPasTerminee {
             get
             {
