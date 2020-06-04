@@ -24,12 +24,12 @@ namespace Hexapawn.Jeu.Partie
             
             while (partieEncours)
             {
-                plateau.Jouer();
+                plateau.JouerJoueurActif();
 
                 partieEncours = plateau.EstPasTerminee;
                 if (partieEncours)
                 {
-                    plateau.AuJoueurSuivant();
+                    plateau.PasserAuJoueurSuivant();
                 }
             }
 

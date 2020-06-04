@@ -45,7 +45,7 @@ namespace Hexapawn.Jeu.Joueurs
         {
             get
             {
-                return String.Format(palmaresFormat,
+                return string.Format(palmaresFormat,
                     nom,
                     victoire,
                     partie,

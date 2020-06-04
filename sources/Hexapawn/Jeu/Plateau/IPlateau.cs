@@ -7,8 +7,8 @@ namespace Hexapawn.Jeu.Plateau
         bool EstPasTerminee { get; }
         Joueur Gagnant { get; }
         void SelectionnerJoueurActif(bool face);
-        void AuJoueurSuivant();
-        void Jouer();
+        void PasserAuJoueurSuivant();
+        void JouerJoueurActif();
         void Enseigner();
         string Afficher();
     }

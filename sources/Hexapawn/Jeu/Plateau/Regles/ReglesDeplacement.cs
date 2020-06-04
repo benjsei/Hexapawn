@@ -18,34 +18,34 @@ namespace Hexapawn.Jeu.Plateau.Regles
 
             foreach(Position position in damier.Positions)
             {
-                var deplacementsPourCetteCase = DeplacementsPourCetteCase(joueur, position);
+                var deplacementsPourCetteCase = DeplacementsPossiblesPosition(joueur, position);
                 deplacements.AddRange(deplacementsPourCetteCase);
             }
 
             return deplacements.ToArray();
         }
 
-        private Deplacement[] DeplacementsPourCetteCase(Joueur joueur, Position depart)
+        private Deplacement[] DeplacementsPossiblesPosition(Joueur joueur, Position position)
         {
             var deplacements = new List<Deplacement>();
 
-            if (damier.CaseContientPion(joueur.pion, depart))
+            if (damier.CaseContientPion(joueur.pion, position))
             {
-                Position nouvellePosition = joueur.AvancerPosition(depart);
+                Position nouvellePosition = joueur.AvancerPosition(position);
 
                 if (DeplacerSiPossible(nouvellePosition) is Position fin)
                 {
-                    deplacements.Add(new Deplacement(depart, fin));
+                    deplacements.Add(new Deplacement(position, fin));
                 }
 
                 if (PendreSiPossible(joueur, nouvellePosition, SensDePrise.ADroite) is Position finADroite)
                 {
-                    deplacements.Add(new Deplacement(depart, finADroite));
+                    deplacements.Add(new Deplacement(position, finADroite));
                 }
 
                 if (PendreSiPossible(joueur, nouvellePosition, SensDePrise.AGauche) is Position finAGauche)
                 {
-                    deplacements.Add(new Deplacement(depart, finAGauche));
+                    deplacements.Add(new Deplacement(position, finAGauche));
                 }
 
             }

@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Hexapawn;
-using Hexapawn.Jeu;
 using Hexapawn.Jeu.Joueurs;
 using Hexapawn.Jeu.Plateau;
 using NUnit.Framework;
@@ -88,4 +87,5 @@ namespace HexapawnBDD
         }
 
     }
+
 }

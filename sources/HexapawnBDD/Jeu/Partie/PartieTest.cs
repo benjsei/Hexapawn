@@ -60,7 +60,7 @@ namespace HexapawnBDD
         public void ThenToursSontPasses(int nombredecoups)
         {
             
-            plateau.Verify(a => a.AuJoueurSuivant(), Times.Exactly(nombredecoups - 1));
+            plateau.Verify(a => a.PasserAuJoueurSuivant(), Times.Exactly(nombredecoups - 1));
         }
 
         [Then(@"Les joueurs apprennent")]

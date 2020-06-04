@@ -6,7 +6,6 @@ namespace Hexapawn.Jeu.Plateau
     public class Plateau : IPlateau
     {
         private const int taille = 3;
-
         private readonly Joueur joueurHaut;
         private readonly Joueur joueurBas;
         private readonly Damier damier = new Damier(taille);
@@ -35,12 +34,12 @@ namespace Hexapawn.Jeu.Plateau
         }
 
 
-        public virtual void AuJoueurSuivant()
+        public virtual void PasserAuJoueurSuivant()
         {
             JoueurActif = JoueurActif == joueurBas ? joueurHaut : joueurBas;
         }
 
-        public void Jouer()
+        public void JouerJoueurActif()
         {
             Deplacement deplacement = JoueurActif.ChoisirDeplacement(this, reglesDeplacement.DeplacementsPossibles(JoueurActif));
             damier.BougerPion(JoueurActif.pion, deplacement);
