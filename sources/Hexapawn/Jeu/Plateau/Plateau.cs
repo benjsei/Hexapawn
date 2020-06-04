@@ -1,20 +1,20 @@
-﻿using Hexapawn.Jeu.Joueurs;
-using Hexapawn.Jeu.Plateau.Regles;
+﻿using Hexapawn.Jeu.Joueur;
+using Hexapawn.Jeu.Plateau.Regle;
 
 namespace Hexapawn.Jeu.Plateau
 {
     public class Plateau : IPlateau
     {
         private const int taille = 3;
-        private readonly Joueur joueurHaut;
-        private readonly Joueur joueurBas;
+        private readonly Joueur.Joueur joueurHaut;
+        private readonly Joueur.Joueur joueurBas;
         private readonly Damier damier = new Damier(taille);
         private readonly ReglesDeplacement reglesDeplacement;
         private readonly ReglesVictoire reglesVictoire;
 
-        public Joueur JoueurActif;
+        public Joueur.Joueur JoueurActif;
 
-        public Plateau(Joueur joueurHaut, Joueur joueurBas)
+        public Plateau(Joueur.Joueur joueurHaut, Joueur.Joueur joueurBas)
         {
             joueurHaut.sensDeJeu = SensDeJeu.HautVersBas;
             this.joueurHaut = joueurHaut;
@@ -55,12 +55,12 @@ namespace Hexapawn.Jeu.Plateau
             this.damier.Restaurer(damier);
         }
 
-        public void BougerPion(Joueur joueur, Deplacement deplacement)
+        public void BougerPion(Joueur.Joueur joueur, Deplacement deplacement)
         {
             damier.BougerPion(joueur.pion, deplacement);
         }
 
-        public Deplacement[] DeplacementsPossibles(Joueur joueur)
+        public Deplacement[] DeplacementsPossibles(Joueur.Joueur joueur)
         {
             return reglesDeplacement.DeplacementsPossibles(joueur);
         }
@@ -72,7 +72,7 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        public virtual Joueur Gagnant
+        public virtual Joueur.Joueur Gagnant
         {
             get
             {
@@ -102,7 +102,7 @@ namespace Hexapawn.Jeu.Plateau
             joueurHaut.Apprendre(!joueurBasGagnant);
         }
 
-        private Joueur ProchainJoueur
+        private Joueur.Joueur ProchainJoueur
         {
             get
             {

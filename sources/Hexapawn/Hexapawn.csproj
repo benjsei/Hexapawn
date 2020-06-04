@@ -41,15 +41,15 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Jeu\Joueurs\Joueur.cs" />
-    <Compile Include="Jeu\Joueurs\JoueurAleatoire.cs" />
-    <Compile Include="Jeu\Joueurs\JoueurIAMachineLearning.cs" />
-    <Compile Include="Extensions\IntExtension.cs" />
-    <Compile Include="Extensions\DoubleExtension.cs" />
-    <Compile Include="Extensions\ArrayExtension.cs" />
-    <Compile Include="Jeu\Aletoire.cs" />
+    <Compile Include="Jeu\Joueur\Joueur.cs" />
+    <Compile Include="Jeu\Joueur\JoueurAleatoire.cs" />
+    <Compile Include="Jeu\Joueur\JoueurIAMachineLearning.cs" />
+    <Compile Include="Extension\IntExtension.cs" />
+    <Compile Include="Extension\DoubleExtension.cs" />
+    <Compile Include="Extension\ArrayExtension.cs" />
+    <Compile Include="Jeu\Aleatoire.cs" />
     <Compile Include="Jeu\IAleatoire.cs" />
-    <Compile Include="Jeu\Joueurs\JoueurHumain.cs" />
+    <Compile Include="Jeu\Joueur\JoueurHumain.cs" />
     <Compile Include="JoueurHumainInterface.cs" />
     <Compile Include="PartieInterface.cs" />
     <Compile Include="Jeu\Plateau\Damier.cs" />
@@ -59,23 +59,23 @@
     <Compile Include="Jeu\Plateau\Position.cs" />
     <Compile Include="Jeu\Plateau\SensDeJeu.cs" />
     <Compile Include="Jeu\Plateau\SensDePrise.cs" />
-    <Compile Include="Jeu\Plateau\Regles\ReglesVictoire.cs" />
-    <Compile Include="Jeu\Plateau\Regles\ReglesDeplacement.cs" />
-    <Compile Include="Jeu\Joueurs\Humain\IJoueurHumainInterface.cs" />
-    <Compile Include="Jeu\Joueurs\IA\Alternative.cs" />
-    <Compile Include="Jeu\Joueurs\IA\Alternatives.cs" />
-    <Compile Include="Jeu\Joueurs\IA\Choix.cs" />
+    <Compile Include="Jeu\Plateau\Regle\ReglesVictoire.cs" />
+    <Compile Include="Jeu\Plateau\Regle\ReglesDeplacement.cs" />
+    <Compile Include="Jeu\Joueur\Humain\IJoueurHumainInterface.cs" />
+    <Compile Include="Jeu\Joueur\IA\Alternative.cs" />
+    <Compile Include="Jeu\Joueur\IA\Alternatives.cs" />
+    <Compile Include="Jeu\Joueur\IA\Choix.cs" />
     <Compile Include="Jeu\Partie\IPartieInterface.cs" />
     <Compile Include="Jeu\Partie\Partie.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />
-    <Folder Include="Extensions\" />
-    <Folder Include="Jeu\Joueurs\" />
-    <Folder Include="Jeu\Joueurs\IA\" />
+    <Folder Include="Extension\" />
+    <Folder Include="Jeu\Joueur\" />
+    <Folder Include="Jeu\Joueur\IA\" />
     <Folder Include="Jeu\Plateau\" />
-    <Folder Include="Jeu\Plateau\Regles\" />
-    <Folder Include="Jeu\Joueurs\Humain\" />
+    <Folder Include="Jeu\Plateau\Regle\" />
+    <Folder Include="Jeu\Joueur\Humain\" />
     <Folder Include="Jeu\Partie\" />
   </ItemGroup>
   <ItemGroup>

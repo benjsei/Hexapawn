@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hexapawn", "Hexapawn\Hexapawn.csproj", "{6F15090B-AB10-41E5-AC50-F07F78C44D66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexapawnBDD", "HexapawnBDD\HexapawnBDD.csproj", "{B24B9125-2DAF-41C8-A589-B0CCE99A8482}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexapawnTests", "HexapawnBDD\HexapawnTests.csproj", "{B24B9125-2DAF-41C8-A589-B0CCE99A8482}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

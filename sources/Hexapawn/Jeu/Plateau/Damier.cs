@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Joueur;
 
 namespace Hexapawn.Jeu.Plateau
 {
@@ -50,7 +50,7 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        public void MettreEnPlace(Joueur joueur)
+        public void MettreEnPlace(Joueur.Joueur joueur)
         {
             foreach(Position position in PositionsDeDepart(joueur))
             {
@@ -94,17 +94,17 @@ namespace Hexapawn.Jeu.Plateau
                 CaseNeContientPasPion(pion, position);
         }
 
-        public bool NeTrouvePas(string pion)
+        public bool Trouver(string pion)
         {
             for (int ligne = 0; ligne < NombreLignes; ligne++)
             {
-                if (NeTrouvePasColonne(pion, ligne))
+                if (TrouverColonne(pion, ligne))
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            return true;
+            return false;
         }
 
         public void Vider()
@@ -115,7 +115,7 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        public Position[] PositionsDArrivee(Joueur joueur)
+        public Position[] PositionsDArrivee(Joueur.Joueur joueur)
         {
             int ligne = LigneDArrivee(joueur);
             return PositionsDUneLigne(ligne);
@@ -165,17 +165,17 @@ namespace Hexapawn.Jeu.Plateau
             cases[position.Ligne, position.Colonne] = caseVide;
         }
 
-        private bool NeTrouvePasColonne(string pion, int ligne)
+        private bool TrouverColonne(string pion, int ligne)
         {
             for (int colonne = 0; colonne < NombreColonnes; colonne++)
             {
                 if (cases[ligne, colonne] == pion)
                 {
-                    return false;
+                    return true;
                 }
             }
 
-            return true;
+            return false;
         }
 
         private string AfficherColonne(int ligne)
@@ -197,13 +197,13 @@ namespace Hexapawn.Jeu.Plateau
             }
         }
 
-        private Position[] PositionsDeDepart(Joueur joueur)
+        private Position[] PositionsDeDepart(Joueur.Joueur joueur)
         {
             int ligne = LigneDeDepart(joueur);
             return PositionsDUneLigne(ligne);
         }
 
-        private int LigneDeDepart(Joueur joueur)
+        private int LigneDeDepart(Joueur.Joueur joueur)
         {
             if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
             {
@@ -223,7 +223,7 @@ namespace Hexapawn.Jeu.Plateau
             return positions.ToArray();
         }
 
-        private int LigneDArrivee(Joueur joueur) { 
+        private int LigneDArrivee(Joueur.Joueur joueur) { 
       
             if (joueur.sensDeJeu == SensDeJeu.BasVersHaut)
             {

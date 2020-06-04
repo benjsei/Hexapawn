@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.props" Condition="Exists('..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.props')" />
+  <Import Project="..\packages\NUnit.3.11.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.11.0\build\NUnit.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B24B9125-2DAF-41C8-A589-B0CCE99A8482}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>HexapawnBDD</RootNamespace>
+    <AssemblyName>HexapawnBDD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="BoDi">
+      <HintPath>..\packages\BoDi.1.4.1\lib\net45\BoDi.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="Utf8Json">
+      <HintPath>..\packages\Utf8Json.1.3.7\lib\net47\Utf8Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Gherkin">
+      <HintPath>..\packages\Gherkin.6.0.0\lib\net45\Gherkin.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.3.0.191\lib\net45\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="TechTalk.SpecFlow.NUnit.SpecFlowPlugin">
+      <HintPath>..\packages\SpecFlow.NUnit.3.0.191\lib\net45\TechTalk.SpecFlow.NUnit.SpecFlowPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.14.1\lib\net45\Moq.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="BDD\Jeu\Joueurs\JoueurAleatoireTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurAleatoireTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Joueurs\JoueurDeplacementTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurDeplacementTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Joueurs\JoueurHumainTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurHumainTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Joueurs\JoueurIAMachineLearningTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurIAMachineLearningTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Joueurs\JoueurPalmaresTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurPalmaresTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Joueurs\JoueurSensDeplacementTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>JoueurSensDeplacementTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Partie\PartieTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>PartieTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Regles\ConditionsVictoire\ConditionsVictoireTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ConditionsVictoireTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Regles\Deplacement\DeplacementTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeplacementTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Regles\DeplacementsPossibles\DeplacementsPossiblesTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>DeplacementsPossiblesTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\Regles\MiseEnPlace\MiseEnPlaceTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>MiseEnPlaceTest.feature.cs</LastGenOutput>
+    </None>
+    <None Include="BDD\Jeu\AleatoireTest.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>AleatoireTest.feature.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurAleatoireTest.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurAleatoireTest.feature.cs">
+      <DependentUpon>JoueurAleatoireTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurDeplacementTest.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurHumainTest.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurIAMachineLearningTest.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurPalmaresTest.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurSensDeplacementTest.cs" />
+    <Compile Include="BDD\Jeu\Partie\PartieTest.cs" />
+    <Compile Include="BDD\Jeu\Regles\ConditionsVictoire\ConditionsVictoireTest.cs" />
+    <Compile Include="BDD\Jeu\Regles\Deplacement\DeplacementTest.cs" />
+    <Compile Include="BDD\Jeu\Regles\DeplacementsPossibles\DeplacementsPossiblesTest.cs" />
+    <Compile Include="BDD\Jeu\Regles\MiseEnPlace\MiseEnPlaceTestSteps.cs" />
+    <Compile Include="BDD\Jeu\Joueurs\JoueurDeplacementTest.feature.cs">
+      <DependentUpon>JoueurDeplacementTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurHumainTest.feature.cs">
+      <DependentUpon>JoueurHumainTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurIAMachineLearningTest.feature.cs">
+      <DependentUpon>JoueurIAMachineLearningTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurPalmaresTest.feature.cs">
+      <DependentUpon>JoueurPalmaresTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Joueurs\JoueurSensDeplacementTest.feature.cs">
+      <DependentUpon>JoueurSensDeplacementTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Partie\PartieTest.feature.cs">
+      <DependentUpon>PartieTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Regles\ConditionsVictoire\ConditionsVictoireTest.feature.cs">
+      <DependentUpon>ConditionsVictoireTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Regles\Deplacement\DeplacementTest.feature.cs">
+      <DependentUpon>DeplacementTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Regles\DeplacementsPossibles\DeplacementsPossiblesTest.feature.cs">
+      <DependentUpon>DeplacementsPossiblesTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\Regles\MiseEnPlace\MiseEnPlaceTest.feature.cs">
+      <DependentUpon>MiseEnPlaceTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Mock\AleatoireMock.cs" />
+    <Compile Include="BDD\Mock\JoueurHumainInterfaceMock.cs" />
+    <Compile Include="BDD\Parseur\DeplacementString.cs" />
+    <Compile Include="BDD\Jeu\AleatoireTest.feature.cs">
+      <DependentUpon>AleatoireTest.feature</DependentUpon>
+    </Compile>
+    <Compile Include="BDD\Jeu\AleatoireTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hexapawn\Hexapawn.csproj">
+      <Project>{6F15090B-AB10-41E5-AC50-F07F78C44D66}</Project>
+      <Name>Hexapawn</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BDD\" />
+    <Folder Include="BDD\Jeu\" />
+    <Folder Include="BDD\Mock\" />
+    <Folder Include="BDD\Parseur\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.targets" Condition="Exists('..\packages\SpecFlow.NUnit.3.0.191\build\SpecFlow.NUnit.targets')" />
+</Project>

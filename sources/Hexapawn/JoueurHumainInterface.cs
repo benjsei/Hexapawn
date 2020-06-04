@@ -1,5 +1,5 @@
 ﻿using System;
-using Hexapawn.Jeu.Joueurs.Humain;
+using Hexapawn.Jeu.Joueur.Humain;
 using Hexapawn.Jeu.Plateau;
 
 namespace Hexapawn

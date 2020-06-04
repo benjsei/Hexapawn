@@ -18,7 +18,7 @@ namespace Hexapawn.Jeu.Partie
 
         public void Jouer()
         {
-            plateau.SelectionnerJoueurActif(aleatoire.VraiOuFauxAleatoire());
+            plateau.SelectionnerJoueurActif(aleatoire.RecupererVraiOuFaux());
 
             bool partieEncours = true;
             

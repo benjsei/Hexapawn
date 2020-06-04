@@ -1,11 +1,11 @@
-﻿using Hexapawn.Jeu.Joueurs;
+﻿using Hexapawn.Jeu.Joueur;
 
 namespace Hexapawn.Jeu.Plateau
 {
     public interface IPlateau
     {
         bool EstPasTerminee { get; }
-        Joueur Gagnant { get; }
+        Joueur.Joueur Gagnant { get; }
         void SelectionnerJoueurActif(bool face);
         void PasserAuJoueurSuivant();
         void JouerJoueurActif();

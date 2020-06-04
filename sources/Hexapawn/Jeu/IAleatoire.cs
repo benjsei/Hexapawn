@@ -2,7 +2,7 @@
 {
     public interface IAleatoire
     {
-        int ChiffreAleatoire(int max);
-        bool VraiOuFauxAleatoire();
+        int RecupererEntier(int max);
+        bool RecupererVraiOuFaux();
     }
 }

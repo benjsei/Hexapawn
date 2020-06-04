@@ -1,5 +1,5 @@
 ﻿using System;
-using Hexapawn.Jeu.Joueurs;
+using Hexapawn.Jeu.Joueur;
 using Hexapawn.Jeu.Partie;
 
 namespace Hexapawn
