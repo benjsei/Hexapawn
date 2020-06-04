@@ -25,5 +25,4 @@ namespace Hexapawn
             return afficher;
         }
     }
-
 }

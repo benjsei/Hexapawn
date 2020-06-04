@@ -67,6 +67,7 @@
     <Compile Include="Jeu\Joueur\IA\Choix.cs" />
     <Compile Include="Jeu\Partie\IPartieInterface.cs" />
     <Compile Include="Jeu\Partie\Partie.cs" />
+    <Compile Include="Jeu\Plateau\Cases.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />
