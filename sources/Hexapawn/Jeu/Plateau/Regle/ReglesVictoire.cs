@@ -1,7 +1,5 @@
 ﻿namespace Hexapawn.Jeu.Plateau.Regle
 {
-    //CLEAN CODE : Principe de responsabilité unique
-    // Quel est le rôle de ma classe ? Ici, 1 seul rôle, évaluer la victoire.
     class ReglesVictoire
     {
         private readonly ReglesDeplacement reglesDeplacement;

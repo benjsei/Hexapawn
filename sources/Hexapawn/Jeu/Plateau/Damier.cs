@@ -4,7 +4,6 @@ using Hexapawn.Jeu.Joueurs;
 
 namespace Hexapawn.Jeu.Plateau
 {
-    //CLEAN CODE : Class de 240 Lignes, c'est trop. 
     public class Damier
     {
         private readonly string[,] cases;

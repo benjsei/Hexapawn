@@ -1,8 +1,5 @@
 ﻿namespace Hexapawn.Jeu.Plateau
 {
-    //CLEAN CODE : Toutes les méthodes font au maximum 3 Lignes
-    //CLEAN CODE : Toutes les méthodes ont au maximum 1 point de complexité
-    //CLEAN CODE : Toutes les méthodes ne font qu'une seule chose
     public static class Cases
     {
         private const int zeroValue = 0;
@@ -50,9 +47,6 @@
 
         public static bool ContientAutre(this string[,] cases, string pion, Position position)
         {
-            ///CLEAN CODE : Jamais de Magic même pour 0
-            ///Comment faire pour int zeroValue = 0 ?
-        
             return position.Colonne >= zeroValue &&
                 position.Colonne < cases.NombreColonnes() &&
                 cases.EstPasVide(position) &&

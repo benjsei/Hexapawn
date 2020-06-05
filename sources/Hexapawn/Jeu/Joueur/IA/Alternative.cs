@@ -29,8 +29,6 @@ namespace Hexapawn.Jeu.Joueurs.IA
         {
             get
             {
-                //CLEAN CODE : Ici on aurait pu mettre return Deplacements.Count > 1; Mais ca aurait été moins documenté, et
-                //le magic string 1 était difficle à éliminer.
                 return Deplacements.AAuMoinsDeux();
             }
         }
