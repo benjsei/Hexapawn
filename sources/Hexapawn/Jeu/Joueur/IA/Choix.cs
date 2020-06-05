@@ -14,9 +14,9 @@ namespace Hexapawn.Jeu.Joueurs.IA
             this.Deplacement = deplacement;
         }
 
-        public bool EstMemePlateau(string AutrePlateau)
+        public bool AMemePlateau(Alternative alternative)
         {
-            return AutrePlateau == plateau;
+            return  alternative.EstMemePlateau( plateau);
         }
     }
 

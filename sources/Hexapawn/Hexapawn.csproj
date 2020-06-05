@@ -68,6 +68,7 @@
     <Compile Include="Jeu\Partie\IPartieInterface.cs" />
     <Compile Include="Jeu\Partie\Partie.cs" />
     <Compile Include="Jeu\Plateau\Cases.cs" />
+    <Compile Include="Extension\ListExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jeu\" />

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Hexapawn
 {
-    public static class Extension
+    public static class ArrayExtension
     {
         public static object PremierSinonVide(this Array array)
         {

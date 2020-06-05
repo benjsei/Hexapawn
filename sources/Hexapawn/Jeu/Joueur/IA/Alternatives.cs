@@ -28,32 +28,30 @@ namespace Hexapawn.Jeu.Joueurs.IA
 
         public Deplacement ChoisirDeplacement(string plateau, Deplacement[] deplacementsPossibles, IAleatoire aleatoire)
         {
-            var alternativesForPlateau = this.FindAll(alternative => alternative.Plateau == plateau);
-            foreach (Alternative alternative in alternativesForPlateau)
+            //CLEAN CODE : Ici on garde le IF car on ne peut pas faire sans pour casser le foreach sous condition
+            //Une Solution ?
+            //foreach (Alternative alternative in this)
+            //{
+            //    //CLEAN CODE : Ici on garde le IF car on ne peut pas faire sans pour casser le foreach sous condition
+            //    //Une Solution ? 
+            //    if (alternative.EstMemePlateau(plateau))
+            //    {
+            //        dernierChoix = alternative.Choisir();
+            //        return dernierChoix.Deplacement;
+            //    }
+            //}
+
+            //return EnregistrerEtChoisirAleatoirementDeplacement(plateau, deplacementsPossibles, aleatoire);
+
+            var alternativesForPlateau = this.FindAll(a => a.EstMemePlateau(plateau));
+
+            if (alternativesForPlateau.Premier() is Alternative premierAlternative)
             {
-                if (alternative.Plateau == plateau)
-                {
-                    dernierChoix = alternative.Choisir();
-                    return dernierChoix.Deplacement;
-                }
+                dernierChoix = premierAlternative.Choisir();
+                return dernierChoix.Deplacement;
             }
 
             return EnregistrerEtChoisirAleatoirementDeplacement(plateau, deplacementsPossibles, aleatoire);
-
-            //CLEAN CODE : Ici on garde le IF car on ne peut pas faire sans pour casser le foreach sous condition
-            //Une Solution ?
-            /*foreach (Alternative alternative in this)
-            {
-                //CLEAN CODE : Ici on garde le IF car on ne peut pas faire sans pour casser le foreach sous condition
-                //Une Solution ? 
-                if (alternative.Plateau == plateau)
-                {
-                    dernierChoix = alternative.Choisir();
-                    return dernierChoix.Deplacement;
-                }
-            }
-
-            return EnregistrerEtChoisirAleatoirementDeplacement(plateau, deplacementsPossibles, aleatoire);*/
         }
 
         public Deplacement EnregistrerEtChoisirAleatoirementDeplacement(string plateau, Deplacement[] deplacementsPossibles, IAleatoire aleatoire)
@@ -68,10 +66,10 @@ namespace Hexapawn.Jeu.Joueurs.IA
         private void SupprimerSiMemePlateauEtNEstPasLaDerniere(Alternative alternative)
         {
             //CLEAN CODE : On peut sortir un variable local pour commenter 
-            var estMemePlateauEtNEstPasLaDerniere = dernierChoix.EstMemePlateau(alternative.Plateau)
+            var aMemePlateauEtNEstPasLaDerniere = dernierChoix.AMemePlateau(alternative)
                     && (alternative.APlusieursDeplacementsRestants);
 
-            if (estMemePlateauEtNEstPasLaDerniere)
+            if (aMemePlateauEtNEstPasLaDerniere)
             {
                 alternative.Deplacements.Remove(dernierChoix.Deplacement);
             }

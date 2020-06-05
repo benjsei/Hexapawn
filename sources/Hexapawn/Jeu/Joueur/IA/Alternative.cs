@@ -6,7 +6,8 @@ namespace Hexapawn.Jeu.Joueurs.IA
     public class Alternative
     {
 
-        public string Plateau;
+        private string Plateau;
+
         public List<Deplacement> Deplacements;
 
         private readonly IAleatoire aleatoire;
@@ -28,8 +29,15 @@ namespace Hexapawn.Jeu.Joueurs.IA
         {
             get
             {
-                return Deplacements.Count > 1;
+                //CLEAN CODE : Ici on aurait pu mettre return Deplacements.Count > 1; Mais ca aurait été moins documenté, et
+                //le magic string 1 était difficle à éliminer.
+                return Deplacements.AAuMoinsDeux();
             }
+        }
+
+        public bool EstMemePlateau(string plateau)
+        {
+            return Plateau == plateau;
         }
 
         private Deplacement ChoisirDeplacement()
